@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gestione Ristorante</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f4ef;--card:#fff;--tx:#1f2328;--mut:#6b7280;--bd:#e5e2d9;--pri:#c2410c;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;--chip:#f1ede4}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161a;--card:#222126;--tx:#f1efe9;--mut:#a09da8;--bd:#34323a;--pri:#fb923c;--ok:#4ade80;--bad:#f87171;--warn:#fbbf24;--chip:#2c2b32}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:76px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+h1{font-size:18px;margin:0}
+.role{display:flex;background:var(--chip);border-radius:99px;padding:3px}
+.role button{border:0;background:none;color:var(--mut);padding:6px 12px;border-radius:99px;font-weight:600;font-size:13px}
+.role button.on{background:var(--pri);color:#fff}
+main{padding:0 16px 16px;max-width:560px;margin:auto}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+h2{font-size:15px;margin:0 0 10px}
+form,.f{display:flex;flex-wrap:wrap;gap:8px}
+input,select{flex:1 1 120px;min-width:0;padding:11px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.btn{flex:1 1 100%;border:0;background:var(--pri);color:#fff;padding:12px;border-radius:12px;font:inherit;font-weight:700}
+.btn:disabled{opacity:.4}
+.sm{flex:0 0 auto;border:1px solid var(--bd);background:var(--chip);color:var(--tx);padding:8px 12px;border-radius:10px;font:inherit;font-size:13px;font-weight:600}
+.dk{background:var(--tx);color:var(--bg)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--bd)}
+.row:first-of-type{border-top:0}
+.row b{text-transform:capitalize}
+.mut{color:var(--mut);font-size:13px}
+.tag{display:inline-block;padding:3px 9px;border-radius:99px;font-size:12px;font-weight:700;background:var(--chip)}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+.chk{width:30px;height:30px;border-radius:50%;border:2px solid var(--bd);background:none;color:var(--ok);font-size:16px;flex:0 0 auto}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:12px 4px;font:inherit;font-size:12px;font-weight:700}
+nav button.on{color:var(--pri)}
+.tot{display:flex;justify-content:space-between;font-weight:700;padding:5px 0}
+.empty{color:var(--mut);text-align:center;padding:14px 0}
+.chips{display:flex;gap:6px;overflow-x:auto;flex:1 1 100%}
+.chip{border:0;white-space:nowrap;background:var(--chip);color:var(--mut);padding:6px 12px;border-radius:99px;font:inherit;font-size:12px;font-weight:700}
+.chip.on{background:var(--pri);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-height:190px;overflow-y:auto;flex:1 1 100%}
+.it{text-align:left;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px;border-radius:10px;font:inherit;font-size:13px;text-transform:capitalize}
+.it.on{border-color:var(--pri);background:var(--chip)}
+.it small{color:var(--mut)}
+.qd{display:flex;gap:6px;align-items:center}.qd input{width:64px;flex:none;padding:8px}
+.step{display:flex;align-items:center;gap:10px;flex:1 1 100%}
+#ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:20;flex-direction:column;gap:10px;padding:16px;align-items:center;overflow:auto}
+#ov img{max-width:100%;border-radius:12px}
+@media print{header,nav,.np{display:none!important}}
+#t{position:fixed;left:16px;right:16px;bottom:84px;background:var(--tx);color:var(--bg);padding:10px 14px;border-radius:12px;font-size:13px;display:none;z-index:30;text-align:center}
+</style>
+</head>
+<body>
+<header><h1>🍽️ Gestione Ristorante</h1><div class="role" id="role"></div></header>
+<main id="v"></main>
+<nav id="nav"></nav>
+<div id="ov"></div><div id="t"></div>
+<script>
+const CAT='alimentare|farina 00:kg,farina manitoba:kg,semola rimacinata:kg,zucchero:kg,sale fino:kg,sale grosso:kg,olio extravergine:l,olio di semi:l,aceto:l,pomodori pelati:conf,passata di pomodoro:conf,pomodori freschi:kg,mozzarella:kg,fiordilatte:kg,parmigiano:kg,pecorino:kg,ricotta:kg,gorgonzola:kg,mascarpone:kg,burro:kg,latte:l,panna:l,uova:pz,lievito di birra:pz,pasta:kg,riso:kg,patate:kg,cipolle:kg,aglio:kg,insalata:kg,limoni:kg,funghi:kg,melanzane:kg,zucchine:kg,peperoni:kg,prosciutto cotto:kg,prosciutto crudo:kg,salame:kg,pancetta:kg,guanciale:kg,pollo:kg,carne macinata:kg,pesce fresco:kg,gamberi:kg,calamari:kg,vongole:kg,tonno in scatola:conf,capperi:conf,olive:conf,basilico:conf,prezzemolo:conf,pepe:conf,origano:conf,cioccolato:kg,savoiardi:conf,miele:kg,caffè:kg,acqua naturale:conf,acqua frizzante:conf,birra:conf,vino bianco:l,vino rosso:l;cucina|carta da forno:conf,pellicola trasparente:pz,carta alluminio:pz,carta assorbente:conf,tovaglioli:conf,guanti monouso:conf,sacchetti sottovuoto:conf,sacchi spazzatura:conf,vaschette asporto:conf,scatole pizza:conf,bicchieri monouso:conf,stuzzicadenti:conf,etichette lotto:pz,retine per capelli:conf,bombola gas:pz;pulizia|detersivo piatti:l,sgrassatore:l,sanificante:l,candeggina:l,spugne:conf,panni microfibra:conf,sapone mani:l,carta igienica:conf';
+const CATALOG=[];CAT.split(';').forEach(g=>{const[c,l]=g.split('|');l.split(',').forEach(x=>{const[n,u]=x.split(':');CATALOG.push({n,u,c})})});
+const K='ristoapp-v2';
+let S=null;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+S=Object.assign({role:'dip',tab:'spesa',spesa:[],lotti:[],fatture:[],acconti:[],barcodes:{},custom:[],ricette:[],prezzi:{},mov:[],al:{},target:30,iva:10},S||{});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,9);
+const eur=n=>Number(n).toLocaleString('it-IT',{style:'currency',currency:'EUR'});
+const today=()=>new Date().toISOString().slice(0,10);
+const fd=s=>new Date(s+'T12:00:00').toLocaleDateString('it-IT');
+const all=()=>CATALOG.concat(S.custom);
+const find=n=>all().find(i=>i.n===n);
+const P={s:{q:'',cat:'',sel:null,qty:1},l:{q:'',cat:'',sel:null}};
+const M={L:{},F:{mode:'in_debito'},A:{}};
+const FILE={};let stream=null;
+
+// ---- foto in IndexedDB (archivio) ----
+const idb=()=>new Promise((res,rej)=>{const r=indexedDB.open('ristoapp',1);r.onupgradeneeded=()=>r.result.createObjectStore('ph');r.onsuccess=()=>res(r.result);r.onerror=()=>rej()});
+async function phPut(k,b){try{const d=await idb();d.transaction('ph','readwrite').objectStore('ph').put(b,k);return true}catch(e){return false}}
+async function phGet(k){try{const d=await idb();return await new Promise(r=>{const q=d.transaction('ph').objectStore('ph').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})}catch(e){return null}}
+async function shrink(f){try{const b=await createImageBitmap(f),k=Math.min(1,1400/Math.max(b.width,b.height)),c=document.createElement('canvas');c.width=b.width*k;c.height=b.height*k;c.getContext('2d').drawImage(b,0,0,c.width,c.height);return await new Promise(r=>c.toBlob(r,'image/jpeg',.8))}catch(e){return f}}
+function toast(m){const t=document.getElementById('t');t.textContent=m;t.style.display='block';clearTimeout(toast.x);toast.x=setTimeout(()=>t.style.display='none',3200)}
+
+function addSpesa(name,qty,unit){
+  name=name.trim().toLowerCase();
+  const ex=S.spesa.find(i=>i.name===name&&!i.done);
+  if(ex)ex.qty=+(ex.qty+qty).toFixed(2);
+  else S.spesa.unshift({id:uid(),name,qty,unit,done:false,by:S.role==='tit'?'Titolare':'Dipendente'});
+}
+
+// ---- selettore catalogo ----
+function grid(c){const p=P[c],q=p.q.trim().toLowerCase();const l=all().filter(i=>(!p.cat||i.c===p.cat)&&i.n.includes(q));
+  return l.map(i=>`<button type="button" class="it ${p.sel===i.n?'on':''}" data-a="sel" data-c="${c}" data-id="${esc(i.n)}">${esc(i.n)} <small>${i.u}</small></button>`).join('')+(q&&!all().some(i=>i.n===q)?`<button type="button" class="it" data-a="newit" data-c="${c}" data-id="${esc(q)}">➕ Aggiungi “${esc(q)}”</button>`:'')}
+function picker(c){const p=P[c];return `<input data-pq="${c}" value="${esc(p.q)}" placeholder="🔍 Cerca nel catalogo…" style="flex:1 1 100%"><div class="chips">${[['','Tutti'],['alimentare','🍅 Alimenti'],['cucina','🧻 Cucina'],['pulizia','🧽 Pulizia']].map(([k,l])=>`<button type="button" class="chip ${p.cat===k?'on':''}" data-a="cat" data-c="${c}" data-id="${k}">${l}</button>`).join('')}</div><div class="grid" id="g-${c}">${grid(c)}</div>`}
+const bv=(o,k,d='')=>esc(M[o][k]??d);
+
+function vSpesa(){
+  const open=S.spesa.filter(i=>!i.done),done=S.spesa.filter(i=>i.done),it=P.s.sel&&find(P.s.sel);
+  let h=`<div class="card"><h2>➕ Manca qualcosa? Tocca per scegliere</h2><div class="f">${picker('s')}
+  ${it?`<div class="step"><b style="flex:1;text-transform:capitalize">${esc(it.n)}</b><button class="sm" data-a="qm">−</button><b>${P.s.qty} ${it.u}</b><button class="sm" data-a="qp">+</button></div>`:''}
+  <button class="btn" data-a="addsp" ${it?'':'disabled'}>Aggiungi in lista</button></div></div>
+  <div class="card"><h2>Lista in tempo reale · ${open.length} articoli</h2>`;
+  h+=open.length?open.map(i=>`<div class="row"><div><b>${esc(i.name)}</b><div class="mut">${i.qty} ${esc(i.unit)} · ${i.by}</div></div><button class="chk" data-a="tg" data-id="${i.id}">○</button></div>`).join(''):'<div class="empty">Niente da comprare 🎉</div>';
+  h+='</div>';
+  if(S.role==='tit')h+=`<div class="card"><h2>📋 Lista definitiva</h2><button class="sm" data-a="cp">Copia lista</button> ${done.length?`<button class="sm" data-a="cl">Svuota presi (${done.length})</button>`:''}</div>`;
+  if(S.role==='tit')h+=vConsumi();
+  if(done.length)h+=`<div class="card"><h2>Presi</h2>${done.map(i=>`<div class="row"><div><b style="text-decoration:line-through;color:var(--mut)">${esc(i.name)}</b> <span class="mut">${i.qty} ${esc(i.unit)}</span></div><button class="chk" data-a="tg" data-id="${i.id}">✓</button></div>`).join('')}</div>`;
+  return h;
+}
+
+function vLotti(){
+  const sups=[...new Set(S.fatture.map(f=>f.sup).concat(S.lotti.map(l=>l.sup)))].filter(Boolean),it=P.l.sel&&find(P.l.sel);
+  let h=`<div class="card"><h2>📥 Arrivo merce</h2><div class="f">
+  <button class="sm dk" data-a="scan" style="flex:1">📷 Scansiona codice</button><button class="sm" data-a="pick" data-id="lf" style="flex:1">🖼️ Foto etichetta</button>
+  <input type="file" id="lf" accept="image/*" capture="environment" hidden data-fi="L">
+  ${FILE.L?'<span class="mut" style="flex:1 1 100%">📎 foto allegata</span>':''}
+  ${it?`<b style="flex:1 1 100%;text-transform:capitalize" class="ok">✓ ${esc(it.n)} (${it.u}) <button class="sm" data-a="unsel">cambia</button></b>`:picker('l')}
+  </div><form data-f="lotto" style="margin-top:8px">
+  <input data-b="L.lot" value="${bv('L','lot')}" placeholder="N° lotto" required>
+  <input data-b="L.exp" type="date" value="${bv('L','exp')}" required title="Scadenza">
+  <input data-b="L.qty" type="number" step="0.1" min="0.1" value="${bv('L','qty')}" placeholder="Q.tà ${it?it.u:''}" required style="flex:0 0 100px">
+  <input data-b="L.sup" list="sl" value="${bv('L','sup')}" placeholder="Fornitore"><datalist id="sl">${sups.map(s=>`<option>${esc(s)}</option>`).join('')}</datalist>
+  <button class="btn">Registra lotto</button></form></div>`;
+  const act=S.lotti.filter(l=>l.rem>0).sort((a,b)=>a.exp.localeCompare(b.exp)),old=S.lotti.filter(l=>l.rem<=0);
+  h+=`<div class="card"><h2>Lotti attivi (prima scadenza in alto)</h2>`;
+  h+=act.length?act.map(l=>{const d=Math.round((new Date(l.exp+'T12:00:00')-new Date())/864e5),c=d<0?'bad':d<=3?'warn':'ok',t=d<0?'Scaduto':d<=3?`Scade tra ${d} g`:'OK';
+    return `<div class="row" style="flex-wrap:wrap"><div><b>${esc(l.name)}</b> <span class="tag ${c}">${t}</span><div class="mut">Lotto ${esc(l.lot)} · scad. ${fd(l.exp)}${l.sup?' · '+esc(l.sup):''}${l.ph?` · <a href="#" data-a="ph" data-id="${l.id}">foto</a>`:''}</div><b style="text-transform:none">${l.rem}</b> / ${l.qty} ${esc(l.unit)}</div>
+    <div class="qd"><input type="number" step="0.1" min="0.1" placeholder="Q.tà" id="q${l.id}"><button class="sm" data-a="sc" data-id="${l.id}">Scarica</button><button class="sm" data-a="ex" data-id="${l.id}">Finito</button></div></div>`}).join(''):'<div class="empty">Nessun lotto in magazzino</div>';
+  h+='</div>';
+  if(old.length)h+=`<div class="card"><h2>Storico lotti esauriti</h2>${old.slice(0,20).map(l=>`<div class="row"><div><b>${esc(l.name)}</b><div class="mut">Lotto ${esc(l.lot)} · ${l.qty} ${esc(l.unit)}${l.sup?' · '+esc(l.sup):''}</div></div><span class="tag">Esaurito</span></div>`).join('')}</div>`;
+  return h;
+}
+
+const paid=f=>f.pays.reduce((a,p)=>a+p.amt,0);
+const st=f=>{const p=paid(f);return p>=f.amt-.001?'pagato':p>0?'parziale':'in_debito'};
+const LB={pagato:['Pagato','ok'],parziale:['Pagato in parte','warn'],in_debito:['In debito','bad']};
+
+function vFatture(){
+  const sups=[...new Set(S.fatture.map(f=>f.sup))],F=M.F;
+  let h=`<div class="card"><h2>🧾 Nuova fattura</h2><form data-f="fatt">
+  <input data-b="F.sup" list="sf" value="${bv('F','sup')}" placeholder="Fornitore" required><datalist id="sf">${sups.map(s=>`<option>${esc(s)}</option>`).join('')}</datalist>
+  <input data-b="F.num" value="${bv('F','num')}" placeholder="N° fattura" required>
+  <input data-b="F.amt" type="number" step="0.01" min="0.01" value="${bv('F','amt')}" placeholder="Importo €" required>
+  <input data-b="F.date" type="date" value="${bv('F','date',today())}" required>
+  <div class="chips">${[['in_debito','In debito'],['parziale','Pagata in parte'],['pagato','Pagata']].map(([k,l])=>`<button type="button" class="chip ${F.mode===k?'on':''}" data-a="mode" data-id="${k}">${l}</button>`).join('')}</div>
+  ${F.mode==='parziale'?`<input data-b="F.part" type="number" step="0.01" min="0.01" value="${bv('F','part')}" placeholder="Quanto hai già pagato? €" required>`:''}
+  <button type="button" class="sm" data-a="pick" data-id="ff" style="flex:1">📷 Foto / file fattura</button>
+  <input type="file" id="ff" accept="image/*" hidden data-fi="F">${FILE.F?`<span class="mut">📎 ${esc(FILE.F.name||'foto')}</span>`:''}
+  ${xmlBlock()}<button class="btn">Salva fattura</button></form><p class="mut">Gli acconti già versati a questo fornitore si scalano da soli.</p></div>`;
+  const tot=S.fatture.reduce((a,f)=>a+f.amt,0),deb=S.fatture.reduce((a,f)=>a+f.amt-paid(f),0);
+  h+=`<div class="card"><div class="tot"><span>Totale fatture</span><span>${eur(tot)}</span></div><div class="tot bad"><span>Ancora da pagare</span><span>${eur(deb)}</span></div></div>`;
+  h+=`<div class="card"><h2>💶 Acconto per la prossima fattura</h2><form data-f="acc"><input data-b="A.sup" list="sf" value="${bv('A','sup')}" placeholder="Fornitore" required><input data-b="A.amt" type="number" step="0.01" min="0.01" value="${bv('A','amt')}" placeholder="€" required style="flex:0 0 90px"><button class="btn">Registra acconto</button></form>`;
+  const cr={};S.acconti.forEach(a=>cr[a.sup]=(cr[a.sup]||0)+a.amt);
+  h+=Object.entries(cr).map(([s,v])=>`<p class="ok" style="margin:6px 0 0">Credito ${esc(s)}: ${eur(v)}</p>`).join('')+'</div>';
+  const m={};S.fatture.forEach(f=>{const k=f.date.slice(0,7);m[k]=m[k]||{};const o=m[k][f.sup]=m[k][f.sup]||{t:0,d:0};o.t+=f.amt;o.d+=f.amt-paid(f)});
+  h+='<div class="card"><h2>📊 Resoconto mensile</h2>';
+  const ks=Object.keys(m).sort().reverse();
+  h+=ks.length?ks.map(k=>{const lbl=new Date(k+'-15T12:00:00').toLocaleDateString('it-IT',{month:'long',year:'numeric'}),t=Object.values(m[k]).reduce((a,b)=>a+b.t,0);
+    return `<div class="tot" style="border-top:1px solid var(--bd);margin-top:6px"><span style="text-transform:capitalize">${lbl}</span><span>${eur(t)}</span></div>`+Object.entries(m[k]).sort((a,b)=>b[1].t-a[1].t).map(([s,v])=>`<div class="tot mut" style="font-weight:400"><span>${esc(s)}</span><span>${eur(v.t)}${v.d>.001?` · da pagare <span class="bad">${eur(v.d)}</span>`:''}</span></div>`).join('')}).join(''):'<div class="empty">Nessuna fattura</div>';
+  h+='</div><div class="card"><h2>🗂️ Archivio fatture</h2>';
+  h+=S.fatture.length?S.fatture.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(f=>{const s=st(f),[l,c]=LB[s];
+    return `<div class="row" style="flex-wrap:wrap"><div><b style="text-transform:none">${esc(f.sup)} · n. ${esc(f.num)}</b><div class="mut">${fd(f.date)} · ${eur(f.amt)}${s!=='in_debito'?` · pagato ${eur(paid(f))}`:''}${f.ph?` · <a href="#" data-a="ph" data-id="${f.id}">📎 documento</a>`:''}</div></div><span class="tag ${c}">${l}</span>
+    ${s!=='pagato'?`<div class="qd" style="flex:1 1 100%;justify-content:flex-end"><span class="mut">resta ${eur(f.amt-paid(f))}</span><input type="number" step="0.01" min="0.01" placeholder="€" id="p${f.id}"><button class="sm" data-a="pay" data-id="${f.id}">Paga</button><button class="sm dk" data-a="full" data-id="${f.id}">Salda</button></div>`:''}</div>`}).join(''):'<div class="empty">Nessuna fattura</div>';
+  return h+'</div>';
+}
+
+// ===== NUOVE SEZIONI: ricette/food cost, allergeni, consumi, XML =====
+const ld=()=>new Date().toLocaleDateString('sv-SE');
+const pr=n=>(S.prezzi[n]||{}).p||0;
+let SUG=[];
+P.r={q:'',cat:'',sel:null};P.a={q:'',cat:'',sel:null};P.o=null;P.c=null;M.R={};
+const AL=['Glutine','Crostacei','Uova','Pesce','Arachidi','Soia','Latte','Frutta a guscio','Sedano','Senape','Sesamo','Solfiti','Lupini','Molluschi'];
+const ALI=['🌾','🦐','🥚','🐟','🥜','🫘','🥛','🌰','🥬','🟡','⚪','🍷','🌼','🐚'];
+const PRE={0:'farina 00,farina manitoba,semola rimacinata,pasta,savoiardi,birra',1:'gamberi',2:'uova,savoiardi',3:'pesce fresco,tonno in scatola',6:'mozzarella,fiordilatte,parmigiano,pecorino,ricotta,gorgonzola,mascarpone,burro,latte,panna',11:'vino bianco,vino rosso,aceto',13:'calamari,vongole'};
+const alOf=n=>{if(S.al[n])return S.al[n];const o={};Object.entries(PRE).forEach(([k,v])=>{if(v.split(',').includes(n))o[k]='c'});return o};
+const rAl=r=>{const o={};r.items.forEach(i=>Object.entries(alOf(i.n)).forEach(([k,v])=>{if(v==='c'||!o[k])o[k]=v}));return o};
+const rCost=r=>r.items.reduce((a,i)=>a+i.q*pr(i.n),0)/Math.max(r.por,1);
+const rMiss=r=>r.items.filter(i=>!(pr(i.n)>0)).length;
+const rnd=x=>Math.ceil(x*2)/2;
+
+function vRicette(){
+  const net=p=>p/(1+S.iva/100);
+  let h=`<div class="card"><h2>🍕 Food cost</h2><div class="f"><label class="mut" style="flex:1">Obiettivo %<input data-g="target" type="number" value="${S.target}"></label><label class="mut" style="flex:1">IVA vendite %<input data-g="iva" type="number" value="${S.iva}"></label></div><p class="mut">I costi usano l’ultimo prezzo di ogni ingrediente (IVA esclusa): arriva dalle fatture XML oppure lo scrivi a mano dentro il piatto.</p></div>
+  <div class="card"><h2>Nuovo piatto</h2><form data-f="ric"><input data-b="R.n" value="${bv('R','n')}" placeholder="Es. pizza margherita" required><input data-b="R.p" type="number" step="0.01" value="${bv('R','p')}" placeholder="Prezzo attuale € (IVA incl.)"><input data-b="R.por" type="number" step="0.5" min="0.5" value="${bv('R','por','1')}" placeholder="Porzioni" style="flex:0 0 90px"><button class="btn">Crea piatto</button></form></div>`;
+  S.ricette.forEach(r=>{
+    const c=rCost(r),f=r.price>0?c/net(r.price)*100:null,mi=rMiss(r),a=rAl(r),open=P.o===r.id;
+    h+=`<div class="card"><div class="row" style="border:0;padding:0" data-a="ro" data-id="${r.id}"><div><b>${esc(r.n)}</b><div class="mut">costo a porzione ${eur(c)} · vendita ${r.price?eur(r.price):'—'}</div></div><span class="tag ${f==null?'':f<=S.target?'ok':f<=S.target+5?'warn':'bad'}">${f==null?'food cost —':'food cost '+f.toFixed(0)+'%'}</span></div>`;
+    if(r.price>0&&c>0)h+=`<div class="mut">Margine lordo: <b>${eur(net(r.price)-c)}</b> a porzione (${(100-f).toFixed(0)}% del prezzo netto)</div>`;
+    if(c>0)h+=`<div style="margin-top:4px">Prezzo consigliato al ${S.target}%: <b>${eur(rnd(c/(S.target/100)*(1+S.iva/100)))}</b></div>`;
+    if(mi)h+=`<div class="warn mut">⚠️ ${mi} ingredienti senza prezzo: il costo è sottostimato</div>`;
+    const al=Object.keys(a).map(i=>ALI[i]+' '+AL[i]+(a[i]==='t'?' (tracce)':''));
+    if(al.length)h+=`<div class="mut">Allergeni: ${al.join(' · ')}</div>`;
+    if(open){
+      h+=r.items.map((i,k)=>`<div class="row"><div><b>${esc(i.n)}</b> <span class="mut">${i.q} ${esc(i.u)}</span></div><div class="qd"><input type="number" step="0.01" data-pr="${esc(i.n)}" value="${pr(i.n)||''}" placeholder="€/${esc(i.u)}"><button class="sm" data-a="ri" data-id="${r.id}" data-k="${k}">✕</button></div></div>`).join('');
+      h+=`<div class="f" style="margin-top:8px"><span class="mut" style="flex:1 1 100%">Aggiungi ingrediente (quantità per tutta la ricetta):</span>${picker('r')}<input data-b="R.q" type="number" step="0.001" value="${bv('R','q')}" placeholder="Q.tà ${P.r.sel&&find(P.r.sel)?find(P.r.sel).u:''}"><button class="btn" data-a="rai" data-id="${r.id}">Aggiungi ingrediente</button><button class="sm" data-a="rdel" data-id="${r.id}">Elimina piatto</button></div>`;
+    }
+    h+='</div>';
+  });
+  const sel=P.a.sel,cur=sel?alOf(sel):{};
+  h+=`<div class="card"><h2>⚠️ Allergeni degli ingredienti</h2><p class="mut">Confronta con l’etichetta del prodotto che usi. Tocca: 1 volta contiene, 2 volte tracce, 3 volte nessuno.</p><div class="f">`+(sel?`<b style="flex:1 1 100%;text-transform:capitalize">${esc(sel)} <button class="sm" data-a="aun">cambia</button></b><div class="chips" style="flex-wrap:wrap">${AL.map((a,i)=>`<button class="chip ${cur[i]?'on':''}" data-a="alt" data-id="${i}">${ALI[i]} ${a}${cur[i]==='c'?' ●':cur[i]==='t'?' ○':''}</button>`).join('')}</div>`:picker('a'))+'</div></div>';
+  return h;
+}
+
+function vAllerg(){
+  let h=`<div class="card"><h2>⚠️ Registro allergeni · Reg. UE 1169/2011</h2><p class="mut">Aggiornato al ${new Date().toLocaleDateString('it-IT')} · <b class="bad">●</b> contiene · <b class="warn">○</b> può contenere tracce</p>`;
+  if(!S.ricette.length)h+='<div class="empty">Nessun piatto: il titolare li crea nella sezione Ricette.</div>';
+  else h+=`<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:12px;min-width:100%"><tr><th style="text-align:left;padding:6px">Piatto</th>${AL.map((a,i)=>`<th style="padding:4px"><div style="font-size:16px">${ALI[i]}</div><div style="font-size:9px;color:var(--mut)">${a}</div></th>`).join('')}</tr>`+S.ricette.map(r=>{const o=rAl(r);return `<tr style="border-top:1px solid var(--bd)"><td style="padding:6px;text-transform:capitalize;font-weight:600;white-space:nowrap">${esc(r.n)}</td>${AL.map((a,i)=>`<td style="text-align:center;font-size:16px" class="${o[i]==='c'?'bad':'warn'}">${o[i]==='c'?'●':o[i]==='t'?'○':''}</td>`).join('')}</tr>`}).join('')+'</table></div>';
+  return h+`<button class="sm np" data-a="print" style="margin:10px 0">🖨️ Stampa</button><p class="mut"><b>Note legali.</b> Gli allergeni vanno comunicati al cliente anche per i piatti non preconfezionati: il personale deve poter rispondere a ogni richiesta e il registro deve restare disponibile in sala.</p><p class="mut"><b>Contaminazioni crociate.</b> In una cucina condivisa non si può escludere il contatto tra ingredienti (piani, fritture, utensili): chi ha un’allergia grave va avvisato. Il simbolo ○ indica le tracce dichiarate dal produttore, non quelle dovute alle lavorazioni del locale.</p><p class="mut">Elenco di supporto costruito dagli ingredienti inseriti: aggiornalo a ogni cambio di ricetta o prodotto e confrontalo con le etichette.</p></div>`;
+}
+
+function vConsumi(){
+  const names=[...new Set(S.mov.map(m=>m.n))];
+  if(!names.length)return '<div class="card"><h2>📈 Storico consumi</h2><div class="empty">Appare dopo i primi scarichi di magazzino.</div></div>';
+  const tot=n=>S.mov.filter(m=>m.n===n).reduce((a,m)=>a+m.q,0);
+  names.sort((a,b)=>tot(b)-tot(a));
+  const sel=names.includes(P.c)?P.c:names[0],u=(find(sel)||{}).u||'';
+  const days=[];for(let k=27;k>=0;k--){const d=new Date(Date.now()-k*864e5),key=d.toLocaleDateString('sv-SE');days.push({d,q:S.mov.filter(m=>m.n===sel&&m.d===key).reduce((a,m)=>a+m.q,0)})}
+  const mx=Math.max(...days.map(x=>x.q),.001),isW=x=>x.d.getDay()===0||x.d.getDay()===6;
+  const we=days.filter(isW),wd=days.filter(x=>!isW(x)),avg=a=>a.reduce((s,x)=>s+x.q,0)/Math.max(a.length,1),ra=avg(wd)>0?avg(we)/avg(wd):null;
+  const bars=days.map((x,i)=>{const h=Math.round(x.q/mx*100);return `<rect x="${i*10+1}" y="${104-h}" width="8" height="${h}" rx="2" fill="${isW(x)?'#c2410c':'#94a3b8'}"><title>${x.d.toLocaleDateString('it-IT')}: ${x.q} ${u}</title></rect>`}).join('');
+  const first=Math.min(...S.mov.map(m=>new Date(m.d+'T12:00:00').getTime()));
+  let fc;
+  if((Date.now()-first)/864e5<14)fc='<p class="mut">Servono almeno 2 settimane di scarichi per la previsione a 7 giorni.</p>';
+  else{
+    const c28=new Date(Date.now()-28*864e5).toLocaleDateString('sv-SE');
+    SUG=names.map(n=>{const need=S.mov.filter(m=>m.n===n&&m.d>=c28).reduce((a,m)=>a+m.q,0)/4,st=S.lotti.filter(l=>l.name===n).reduce((a,l)=>a+l.rem,0),ls=S.lotti.filter(l=>l.name===n&&l.sup);
+      return{n,u:(find(n)||{}).u||'',sup:ls.length?ls[ls.length-1].sup:'Senza fornitore',need,st,buy:Math.ceil((need-st)*10)/10}}).filter(x=>x.buy>0);
+    fc=SUG.length?`<button class="btn" data-a="fall" style="margin-bottom:8px">➕ Aggiungi tutto alla lista spesa (${SUG.length})</button>`+[...new Set(SUG.map(x=>x.sup))].map(s=>`<div class="tot" style="border-top:1px solid var(--bd)"><span>${esc(s)}</span><button class="sm" data-a="ord" data-id="${esc(s)}">Copia ordine</button></div>`+SUG.filter(x=>x.sup===s).map(x=>`<div class="mut">${esc(x.n)}: ordina ${x.buy} ${esc(x.u)} (fabbisogno ${x.need.toFixed(1)} · scorta ${x.st})</div>`).join('')).join(''):'<p class="mut">Le scorte coprono il consumo previsto.</p>';
+  }
+  return `<div class="card"><h2>📈 Storico consumi (28 giorni)</h2><select data-ch="1" style="width:100%;margin-bottom:8px">${names.map(n=>`<option ${n===sel?'selected':''}>${esc(n)}</option>`).join('')}</select><svg viewBox="0 0 280 108" style="width:100%;height:130px">${bars}</svg><div class="mut"><span style="color:#c2410c">■</span> weekend · <span style="color:#94a3b8">■</span> feriali${ra!=null?` — nel weekend consumate ${ra>=1?'+':''}${Math.round((ra-1)*100)}% al giorno rispetto ai feriali`:''}</div></div><div class="card"><h2>🛒 Fabbisogno a 7 giorni</h2>${fc}<p class="mut">Stima = consumo medio ultime 4 settimane meno scorte attuali.</p></div>`;
+}
+
+function xmlBlock(){
+  const L=M.F.lines||[],up=L.filter(l=>pr(l.n)>0&&+l.p>pr(l.n)*1.005).length,dn=L.filter(l=>pr(l.n)>0&&+l.p<pr(l.n)*.995).length;
+  return `<button type="button" class="sm dk" data-a="pick" data-id="fx" style="flex:1 1 100%">📄 Importa fattura elettronica XML</button><input type="file" id="fx" accept=".xml,text/xml" hidden data-xml="1">`
+  +(L.length?`<p class="mut" style="flex:1 1 100%">Righe lette: scegli l’ingrediente e controlla quantità e prezzo (per unità dell’ingrediente, IVA esclusa). <b class="bad">▲ ${up} in aumento</b> · <b class="ok">▼ ${dn} in calo</b></p>`+L.map((l,i)=>{
+    const o=pr(l.n),p=+l.p,pc=o>0&&p>0?(p-o)/o*100:null;
+    return `<div style="flex:1 1 100%;border:1px solid var(--bd);border-radius:12px;padding:8px"><div class="mut">${esc(l.d)}</div><div class="f"><select data-ln="${i}.n"><option value="">— non collegare —</option>${all().map(x=>`<option ${x.n===l.n?'selected':''}>${esc(x.n)}</option>`).join('')}</select><input data-ln="${i}.q" type="number" step="0.01" value="${esc(l.q)}" style="flex:0 0 70px"><input data-ln="${i}.p" type="number" step="0.0001" value="${esc(l.p)}" style="flex:0 0 84px"></div><div class="mut ${pc==null?'':pc>.5?'bad':pc<-.5?'ok':''}">${!l.n?'Non collegata: non aggiorna i costi':o>0?`Prima ${eur(o)} → ora ${eur(p)} (${pc>=0?'▲ +':'▼ '}${pc.toFixed(1)}%)`:'Primo prezzo registrato'}${p>0&&+l.q>0?' · riga '+eur(p*l.q):''}</div></div>`}).join(''):'');
+}
+async function parseXml(f){
+  try{
+    const d=new DOMParser().parseFromString(await f.text(),'application/xml');if(d.getElementsByTagName('parsererror').length)throw 0;
+    const A=(n,t)=>Array.from(n.getElementsByTagNameNS('*',t)),T=(n,t)=>{const e=n&&A(n,t)[0];return e?e.textContent.trim():''};
+    const ced=A(d,'CedentePrestatore')[0],dg=A(d,'DatiGeneraliDocumento')[0],F=M.F;
+    F.sup=T(ced,'Denominazione')||(T(ced,'Nome')+' '+T(ced,'Cognome')).trim();F.num=T(dg,'Numero');F.amt=T(dg,'ImportoTotaleDocumento');F.date=T(dg,'Data')||today();
+    const nm=all().map(x=>x.n).sort((a,b)=>b.length-a.length);
+    F.lines=A(d,'DettaglioLinee').map(l=>{const ds=T(l,'Descrizione');return{d:ds,n:nm.find(n=>ds.toLowerCase().includes(n))||'',q:T(l,'Quantita')||'1',p:T(l,'PrezzoUnitario')||'0'}}).filter(l=>+l.p>0);
+    toast('Fattura letta: controlla i dati prima di salvare');
+  }catch(e){toast('File XML non leggibile (le fatture firmate .p7m vanno prima aperte)')}
+  render();
+}
+
+function render(){
+  if(S.role==='dip'&&(S.tab==='fatture'||S.tab==='ricette'))S.tab='spesa';
+  document.getElementById('role').innerHTML=[['dip','Dipendente'],['tit','Titolare']].map(([k,l])=>`<button class="${S.role===k?'on':''}" data-a="role" data-id="${k}">${l}</button>`).join('');
+  const t=[['spesa','🛒 Spesa'],['lotti','📦 Lotti'],['allergeni','⚠️ Allerg.']];if(S.role==='tit')t.push(['ricette','🍕 Ricette'],['fatture','🧾 Fatture']);
+  document.getElementById('nav').innerHTML=t.map(([k,l])=>`<button class="${S.tab===k?'on':''}" data-a="tab" data-id="${k}">${l}</button>`).join('');
+  document.getElementById('v').innerHTML={spesa:vSpesa,lotti:vLotti,fatture:vFatture,ricette:vRicette,allergeni:vAllerg}[S.tab]();
+}
+
+// ---- scanner ----
+async function scan(){
+  const ov=document.getElementById('ov');ov.style.display='flex';
+  ov.innerHTML='<button class="sm" data-a="close">✕ Chiudi</button><video id="vd" playsinline muted style="width:100%;border-radius:12px"></video><p id="sm" style="color:#fff;margin:0"></p><form data-f="manual" style="width:100%"><input name="c" placeholder="Codice a mano"><button class="sm">OK</button></form>';
+  const sm=document.getElementById('sm'),vd=document.getElementById('vd');
+  if(!('BarcodeDetector' in window)){sm.textContent='Scanner non supportato da questo browser: scrivi il codice a mano o usa la foto.';return}
+  try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});vd.srcObject=stream;await vd.play();
+    const det=new BarcodeDetector();(async function t(){if(!stream)return;const r=await det.detect(vd).catch(()=>[]);if(r.length){gotCode(r[0].rawValue);return}requestAnimationFrame(t)})();
+  }catch(e){sm.textContent='Fotocamera non disponibile: controlla i permessi o scrivi il codice a mano.'}
+}
+function closeOv(){if(stream)stream.getTracks().forEach(t=>t.stop());stream=null;const o=document.getElementById('ov');o.style.display='none';o.innerHTML=''}
+function gotCode(c){closeOv();M.L.code=c;const n=S.barcodes[c];if(n&&find(n)){P.l.sel=n;toast('Riconosciuto: '+n)}else toast('Codice nuovo: scegli l’articolo, lo ricorderò.');render()}
+
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;
+  const a=b.dataset.a,id=b.dataset.id,c=b.dataset.c;
+  if(a==='ph'){e.preventDefault();const f=await phGet(id);if(!f){toast('Foto non trovata');return}const o=document.getElementById('ov');o.style.display='flex';o.innerHTML='<button class="sm" data-a="close">✕ Chiudi</button>';const im=new Image();im.src=URL.createObjectURL(f);o.appendChild(im);return}
+  if(a==='close'){closeOv();return}
+  if(a==='scan'){scan();return}
+  if(a==='pick'){document.getElementById(id).click();return}
+  if(a==='role')S.role=id;
+  else if(a==='tab')S.tab=id;
+  else if(a==='cat'){P[c].cat=id}
+  else if(a==='sel'){P[c].sel=id}
+  else if(a==='unsel'){P.l.sel=null}
+  else if(a==='newit'){S.custom.push({n:id,u:'pz',c:'alimentare'});P[c].sel=id;P[c].q=''}
+  else if(a==='qm')P.s.qty=Math.max(1,P.s.qty-1);
+  else if(a==='qp')P.s.qty++;
+  else if(a==='addsp'){const it=find(P.s.sel);if(!it)return;addSpesa(it.n,P.s.qty,it.u);toast(it.n+' aggiunto ✓');P.s.sel=null;P.s.qty=1;P.s.q=''}
+  else if(a==='tg'){const i=S.spesa.find(x=>x.id===id);i.done=!i.done}
+  else if(a==='cl')S.spesa=S.spesa.filter(i=>!i.done);
+  else if(a==='cp'){const t=S.spesa.filter(i=>!i.done).map(i=>`- ${i.name}: ${i.qty} ${i.unit}`).join('\n');try{await navigator.clipboard.writeText('Lista della spesa\n'+t);toast('Lista copiata ✓')}catch(x){toast('Copia non disponibile')}return}
+  else if(a==='sc'||a==='ex'){
+    const l=S.lotti.find(x=>x.id===id),q=a==='ex'?l.rem:parseFloat(document.getElementById('q'+id).value);if(!(q>0))return;
+    S.mov.push({n:l.name,q:+q,d:ld()});l.rem=Math.max(0,+(l.rem-q).toFixed(2));
+    if(l.rem===0&&!S.lotti.some(x=>x.name===l.name&&x.rem>0)){addSpesa(l.name,l.qty,l.unit);toast(l.name+' finito: messo in lista spesa')}
+  }
+  else if(a==='mode')M.F.mode=id;
+  else if(a==='ro')P.o=P.o===id?null:id;
+  else if(a==='ri'){S.ricette.find(x=>x.id===id).items.splice(+b.dataset.k,1)}
+  else if(a==='rai'){const r=S.ricette.find(x=>x.id===id),it=find(P.r.sel),q=parseFloat(M.R.q);if(!it||!(q>0)){toast('Scegli ingrediente e quantità');return}const e=r.items.find(x=>x.n===it.n);if(e)e.q=q;else r.items.push({n:it.n,u:it.u,q});P.r.sel=null;P.r.q='';M.R.q=''}
+  else if(a==='rdel'){if(confirm('Eliminare il piatto?')){S.ricette=S.ricette.filter(x=>x.id!==id);P.o=null}}
+  else if(a==='aun')P.a.sel=null;
+  else if(a==='alt'){const n=P.a.sel,o=Object.assign({},alOf(n)),cu=o[id];if(!cu)o[id]='c';else if(cu==='c')o[id]='t';else delete o[id];S.al[n]=o}
+  else if(a==='print'){window.print();return}
+  else if(a==='fall'){SUG.forEach(x=>addSpesa(x.n,x.buy,x.u));toast(SUG.length+' articoli aggiunti alla lista spesa ✓')}
+  else if(a==='ord'){const t='Buongiorno, vorrei ordinare:\n'+SUG.filter(x=>x.sup===id).map(x=>`- ${x.n}: ${x.buy} ${x.u}`).join('\n')+'\nGrazie';try{await navigator.clipboard.writeText(t);toast('Ordine copiato ✓')}catch(x){toast('Copia non disponibile')}return}
+  else if(a==='pay'||a==='full'){const f=S.fatture.find(x=>x.id===id),r=f.amt-paid(f);const q=a==='full'?r:Math.min(r,parseFloat(document.getElementById('p'+id).value));if(!(q>0))return;f.pays.push({amt:+q.toFixed(2),date:today(),kind:'pagamento'})}
+  save();render();
+});
+
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset.b){const[o,k]=t.dataset.b.split('.');M[o][k]=t.value}
+  if(t.dataset.ln){const[i,k]=t.dataset.ln.split('.');M.F.lines[i][k]=t.value}
+  if(t.dataset.g){S[t.dataset.g]=+t.value||0;save()}
+  if(t.dataset.pr){S.prezzi[t.dataset.pr]={p:+t.value||0,d:today()};save()}
+  if(t.dataset.pq){P[t.dataset.pq].q=t.value;document.getElementById('g-'+t.dataset.pq).innerHTML=grid(t.dataset.pq)}
+});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.fi){FILE[t.dataset.fi]=t.files[0]||null;render()}
+  if(t.dataset.xml&&t.files[0])parseXml(t.files[0]);
+  if(t.dataset.ln||t.dataset.g||t.dataset.pr)render();
+  if(t.dataset.ch){P.c=t.value;render()}});
+
+document.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target,k=f.dataset.f,v=Object.fromEntries(new FormData(f));
+  if(k==='manual'){gotCode((v.c||'').trim());return}
+  if(k==='lotto'){
+    const it=find(P.l.sel);if(!it){toast('Scegli prima l’articolo dal catalogo');return}
+    const L=M.L,id=uid(),q=parseFloat(L.qty);let ph=false;
+    if(FILE.L)ph=await phPut(id,await shrink(FILE.L));
+    S.lotti.push({id,name:it.n,lot:(L.lot||'').trim(),exp:L.exp,qty:q,rem:q,unit:it.u,sup:(L.sup||'').trim(),ph});
+    if(L.code)S.barcodes[L.code]=it.n;
+    M.L={};FILE.L=null;P.l.sel=null;P.l.q='';toast('Lotto registrato ✓');
+  }
+  if(k==='fatt'){
+    const F=M.F,id=uid(),amt=parseFloat(F.amt),sup=(F.sup||'').trim();let ph=false;
+    if(FILE.F)ph=await phPut(id,await shrink(FILE.F));
+    const inv={id,sup,num:(F.num||'').trim(),amt,date:F.date||today(),pays:[],ph};
+    // acconti del fornitore applicati alla nuova fattura
+    let need=amt;
+    S.acconti=S.acconti.filter(a=>{
+      if(a.sup.toLowerCase()!==sup.toLowerCase()||need<=0)return true;
+      const t=Math.min(a.amt,need);inv.pays.push({amt:t,date:a.date,kind:'acconto'});need-=t;a.amt=+(a.amt-t).toFixed(2);return a.amt>0.001;
+    });
+    const res=amt-paid(inv);
+    if(F.mode==='pagato'&&res>0)inv.pays.push({amt:+res.toFixed(2),date:today(),kind:'pagamento'});
+    if(F.mode==='parziale'){const p=Math.min(parseFloat(F.part||0),res);if(p>0)inv.pays.push({amt:p,date:today(),kind:'pagamento'})}
+    (F.lines||[]).forEach(l=>{if(l.n&&+l.p>0)S.prezzi[l.n]={p:+l.p,d:inv.date}});S.fatture.push(inv);M.F={mode:'in_debito'};FILE.F=null;toast('Fattura salvata ✓');
+  }
+  if(k==='ric'){S.ricette.push({id:uid(),n:M.R.n.trim().toLowerCase(),price:parseFloat(M.R.p||0),por:parseFloat(M.R.por||1),items:[]});M.R={};toast('Piatto creato ✓')}
+  if(k==='acc'){S.acconti.push({id:uid(),sup:M.A.sup.trim(),amt:parseFloat(M.A.amt),date:today()});M.A={};toast('Acconto registrato ✓')}
+  save();render();
+});
+window.addEventListener('storage',e=>{if(e.key===K){try{S=JSON.parse(e.newValue);render()}catch(x){}}});
+render();
+</script>
+</body>
+</html>
