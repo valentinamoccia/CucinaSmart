@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gestione Ristorante</title>
+<title>Chef Control</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1E3A5F">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f4ef;--card:#fff;--tx:#1f2328;--mut:#6b7280;--bd:#e5e2d9;--pri:#c2410c;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;--chip:#f1ede4}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161a;--card:#222126;--tx:#f1efe9;--mut:#a09da8;--bd:#34323a;--pri:#fb923c;--ok:#4ade80;--bad:#f87171;--warn:#fbbf24;--chip:#2c2b32}}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#FAF6EF;--card:#fff;--tx:#1F2933;--mut:#6b7280;--bd:#e8e1d4;--pri:#D9570F;--ok:#2E9E6B;--bad:#D64545;--warn:#b45309;--chip:#f3ede2;--blue:#1E3A5F}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161a;--card:#222126;--tx:#f1efe9;--mut:#a09da8;--bd:#34323a;--pri:#F26B21;--ok:#4ade80;--bad:#f87171;--warn:#fbbf24;--chip:#2c2b32;--blue:#8DB2E8}}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:76px}
@@ -23,7 +27,7 @@ input,select{flex:1 1 120px;min-width:0;padding:11px;border-radius:12px;border:1
 .btn{flex:1 1 100%;border:0;background:var(--pri);color:#fff;padding:12px;border-radius:12px;font:inherit;font-weight:700}
 .btn:disabled{opacity:.4}
 .sm{flex:0 0 auto;border:1px solid var(--bd);background:var(--chip);color:var(--tx);padding:8px 12px;border-radius:10px;font:inherit;font-size:13px;font-weight:600}
-.dk{background:var(--tx);color:var(--bg)}
+.dk{background:#1E3A5F;color:#fff}
 .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--bd)}
 .row:first-of-type{border-top:0}
 .row b{text-transform:capitalize}
@@ -52,7 +56,7 @@ nav button.on{color:var(--pri)}
 </style>
 </head>
 <body>
-<header><h1>🍽️ Gestione Ristorante</h1><div class="role" id="role"></div></header>
+<header><h1 style="display:flex;align-items:center;gap:8px"><span style="width:32px;height:32px;display:block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Chef Control"><rect width="512" height="512" rx="112" fill="#1E3A5F"/><g transform="translate(0,25)"><circle cx="180" cy="200" r="58" fill="#fff"/><circle cx="256" cy="168" r="70" fill="#fff"/><circle cx="332" cy="200" r="58" fill="#fff"/><rect x="150" y="258" width="212" height="10" fill="#1E3A5F"/><rect x="176" y="268" width="160" height="96" rx="14" fill="#fff"/><path d="M214 316 L244 344 L298 288" fill="none" stroke="#F26B21" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span><span><span style="color:var(--pri)">Chef</span> <span style="color:var(--blue)">Control</span></span></h1><div class="role" id="role"></div></header>
 <main id="v"></main>
 <nav id="nav"></nav>
 <div id="ov"></div><div id="t"></div>
