@@ -60,6 +60,22 @@ nav button.on{color:var(--pri)}
 #ov img{max-width:100%;border-radius:12px}
 @media print{header,nav,.np{display:none!important}}
 .auto{outline:2px solid #f59e0b;background:rgba(245,158,11,.14)}
+body{font-size:16px}
+input,select,textarea{font-size:16px!important;padding:13px!important}
+.btn{padding:16px;font-size:17px;border-radius:14px}.btn.alt{background:var(--chip);color:var(--tx);border:2px solid var(--bd)}
+.sm{padding:11px 14px;font-size:14px;min-height:42px}.chk{width:40px;height:40px;font-size:18px}
+.chip{padding:11px 16px;font-size:15px}.row{padding:12px 0}h2{font-size:17px}
+.todo{color:var(--pri)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.tile{display:flex;flex-direction:column;gap:6px;text-align:left;padding:16px;border-radius:18px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;min-height:124px}
+.tile .ic{font-size:28px}.tile b{font-size:18px}.tile span{font-size:14px;color:var(--mut)}
+.tile.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,var(--card))}.tile.ok .ic{color:var(--ok)}.tile.ok span{color:var(--ok);font-weight:700}
+.tile.todo{border-color:var(--pri);background:color-mix(in srgb,var(--pri) 13%,var(--card))}.tile.todo .ic{color:var(--pri)}.tile.todo span{color:var(--pri);font-weight:700}
+.tile.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,var(--card))}.tile.bad .ic{color:var(--bad)}.tile.bad span{color:var(--bad);font-weight:700}
+.tile.wide{grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;gap:12px}
+.pbar{height:12px;border-radius:99px;background:var(--chip);overflow:hidden}.pbar>div{height:100%;background:var(--ok);transition:width .4s}
+.empty::before{content:'';display:block;width:50px;height:50px;margin:0 auto 10px;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkNoZWYgQ29udHJvbCIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij48bWV0YWRhdGE+PGMycGE6bWFuaWZlc3Q+QUFBV2dtcDFiV0lBQUFBZWFuVnRaR015Y0dFQUVRQVFnQUFBcWdBNG0zRURZekp3WVFBQUFCWmNhblZ0WWdBQUFFZHFkVzFrWXpKdFlRQVJBQkNBQUFDcUFEaWJjUU4xY200Nll6SndZVHBsTXpjNFpETTJZeTB3TlRZd0xUUXlaamN0WVRVM01TMWpOV1UwTW1RM1ptTTBNalFBQUFBRGwycDFiV0lBQUFBcGFuVnRaR015WVhNQUVRQVFnQUFBcWdBNG0zRURZekp3WVM1aGMzTmxjblJwYjI1ekFBQUFBTHhxZFcxaUFBQUFSR3AxYldSalltOXlBQkVBRUlBQUFLb0FPSnR4RTJNeWNHRXVhVzVuY21Wa2FXVnVkQzUyTXdBQUFBQVlZekp6YUpUdmhLZjh2UjJLeGpnWk9XVHcwREFBQUFCd1kySnZjcU5wWkdNNlptOXliV0YwYldsdFlXZGxMM04yWnl0NGJXeHFhVzV6ZEdGdVkyVkpSSGdzZUcxd09tbHBaRHBqT1dRM01XSTVNeTFpWkRBMkxUUmtaR1V0T0dKbE5pMHlOemRqT1dKaFptUTBOR1JzY21Wc1lYUnBiMjV6YUdsd2FIQmhjbVZ1ZEU5bUFBQUI0bXAxYldJQUFBQkJhblZ0WkdOaWIzSUFFUUFRZ0FBQXFnQTRtM0VUWXpKd1lTNWhZM1JwYjI1ekxuWXlBQUFBQUJoak1uTm9GMjBGZU9ia0tSSU5DSW1IRUQ3QmVRQUFBWmxqWW05eW9tZGhZM1JwYjI1emdxSm1ZV04wYVc5dWEyTXljR0V1YjNCbGJtVmthbkJoY21GdFpYUmxjbk9oYTJsdVozSmxaR2xsYm5SemdhSmpkWEpzZUMxelpXeG1JMnAxYldKbVBXTXljR0V1WVhOelpYSjBhVzl1Y3k5ak1uQmhMbWx1WjNKbFpHbGxiblF1ZGpOa2FHRnphRmdnZTJpdmk0L2Y1SnhHV0lzbFdBNHViWUZzOVdRbktUVUFCbVE5eTUrYjlNcWtabUZqZEdsdmJuZ2RZMjl0TG1GdWRHaHliM0JwWXk1amJHRjFaR1V1Y0hKdmRtbGtaV1JxY0dGeVlXMWxkR1Z5YzZGNEgyTnZiUzVoYm5Sb2NtOXdhV011YjNKcFoybHVMV052Ym1acFpHVnVZMlZuZFc1cmJtOTNibXRrWlhOamNtbHdkR2x2Ym5obVEyeGhkV1JsSUhCeWIzWnBaR1ZrSUhSb2FYTWdabWxzWlNCaGRDQjBhR1VnY21WeGRXVnpkQ0J2WmlCaElIVnpaWElnWVc1a0lHMWhlU0JvWVhabElHTnlaV0YwWldRZ2IzSWdiVzlrYVdacFpXUWdkR2hsSUdacGJHVWdZMjl1ZEdWdWRITXViWE52Wm5SM1lYSmxRV2RsYm5TaFpHNWhiV1ZtUTJ4aGRXUmxjbUZzYkVGamRHbHZibk5KYm1Oc2RXUmxaUFVBQUFESWFuVnRZZ0FBQUVCcWRXMWtZMkp2Y2dBUkFCQ0FBQUNxQURpYmNSTmpNbkJoTG1oaGMyZ3VaR0YwWVFBQUFBQVlZekp6YURMWE4vQWI2R084LzJYcWRJNStSdlVBQUFDQVkySnZjcVZqWVd4blpuTm9ZVEkxTm1Od1lXUk5BQUFBQUFBQUFBQUFBQUFBQUdSb1lYTm9XQ0NmMzlON0hmNFd4elVjbjlkMUc2MFVJTVBKUE1HTTZnYXBoSUxTUzByaWZXUnVZVzFsYm1wMWJXSm1JRzFoYm1sbVpYTjBhbVY0WTJ4MWMybHZibk9Cb21WemRHRnlkQmlpWm14bGJtZDBhQmtlQkFBQUFqNXFkVzFpQUFBQUoycDFiV1JqTW1Oc0FCRUFFSUFBQUtvQU9KdHhBMk15Y0dFdVkyeGhhVzB1ZGpJQUFBQUNEMk5pYjNLbFkyRnNaMlp6YUdFeU5UWnBjMmxuYm1GMGRYSmxlRTF6Wld4bUkycDFiV0ptUFM5ak1uQmhMM1Z5Ympwak1uQmhPbVV6Tnpoa016WmpMVEExTmpBdE5ESm1OeTFoTlRjeExXTTFaVFF5WkRkbVl6UXlOQzlqTW5CaExuTnBaMjVoZEhWeVpXcHBibk4wWVc1alpVbEVlQ3g0YlhBNmFXbGtPakU0WWpNMlkyTTJMV1poWlRZdE5HSXpOeTFoT1dJd0xUaGlaVFpoWm1Rek4yRTBNWEpqY21WaGRHVmtYMkZ6YzJWeWRHbHZibk9Eb21OMWNteDRMWE5sYkdZamFuVnRZbVk5WXpKd1lTNWhjM05sY25ScGIyNXpMMk15Y0dFdWFXNW5jbVZrYVdWdWRDNTJNMlJvWVhOb1dDQjdhSytMajkva25FWllpeVZZRGk1dGdXejFaQ2NwTlFBR1pEM0xuNXYweXFKamRYSnNlQ3B6Wld4bUkycDFiV0ptUFdNeWNHRXVZWE56WlhKMGFXOXVjeTlqTW5CaExtRmpkR2x2Ym5NdWRqSmthR0Z6YUZnZ3M5cXdVd0VXRVFkbUxmb2xKNXZxQk13dXE5SHdzNTI0QUlLY0VWd0RPVXVpWTNWeWJIZ3BjMlZzWmlOcWRXMWlaajFqTW5CaExtRnpjMlZ5ZEdsdmJuTXZZekp3WVM1b1lYTm9MbVJoZEdGa2FHRnphRmdnUDIyNzZoUHJza3pCLy9wbmdJdUpUdmc1NXVEQmFYRUVCS1VySlJQd1Z6VjBZMnhoYVcxZloyVnVaWEpoZEc5eVgybHVabStqWkc1aGJXVnZRVzUwYUhKdmNHbGpJRVpwYkdWelozWmxjbk5wYjI1bE1TNHdMakJyYzNCbFkxWmxjbk5wYjI1bE1pNDBMakFBQUJBNGFuVnRZZ0FBQUNocWRXMWtZekpqY3dBUkFCQ0FBQUNxQURpYmNRTmpNbkJoTG5OcFoyNWhkSFZ5WlFBQUFCQUlZMkp2Y3RLRVdRSVNvZ0VtR0NGWkFnb3dnZ0lHTUlJQmphQURBZ0VDQWhSQTVhQUs3c0k1MEw2NGcvb0dRZ1U5WjFVVEFEQUtCZ2dxaGtqT1BRUURBekJKTVJjd0ZRWURWUVFLRXc1QmJuUm9jbTl3YVdNc0lGQkNRekV1TUN3R0ExVUVBeE1sUVc1MGFISnZjR2xqSUVOdmJuUmxiblFnUTNKbFpHVnVkR2xoYkhNZ1VtOXZkQ0JEUVRBZUZ3MHlOakE0TURjeE9EUXpOVFphRncweU9EQTRNRFl4T1RRek5UWmFNRVF4RnpBVkJnTlZCQW9URGtGdWRHaHliM0JwWXl3Z1VFSkRNU2t3SndZRFZRUURFeUJCYm5Sb2NtOXdhV01nUTJ4aGRXUmxJRU52Ym5SbGJuUWdVMmxuYm1sdVp6QlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJKaDZDbXZMVUJnRkZOVTB2VUtsT1Z0RTZkamQxN0w1U3V3WDBMZW1GaXNCTTNka2QvM2N5anhGQTNRbzVTNDZmWDAvaWhZMFZaN21mYjlLRjcwM3Q1T2pXREJXTUE0R0ExVWREd0VCL3dRRUF3SUhnREFWQmdOVkhTVUVEakFNQmdvckJnRUVBWVBvWGdJQk1Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGpCQmd3Rm9BVXpsSGlCSUZPWkZzaitPUEV6NW8rbk1IWFhNSXdDZ1lJS29aSXpqMEVBd01EWndBd1pBSXdNWE1kRko0QmV0TExWWTdPUnVFOW5vcWJiQVpPWm4vYUFyWHlUd0ZBWmZLclB6eEYydlBvSk5mMStVQ2RnMVhHQWpCd1gxemQ5V0dxWWtxbUw1U0ZxdzFReVNqcjF6SmZwSk05KzFyZER3U1BMTU9QT2pLdWlYam9VL3BVVWVHOVJ3bWhZM0JoWkZrTm5nQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUFpZUUROeXpsV05oLzRHYlhBMG1xSzl4SlBDUkxCY2pQKzhFU0MxZ2J3VXlFNUJLUFBjSTkvNHdHSWc4T3JmS1gyS1BwSnR2S1dvV1dEUTdtM1ZuQkNyaEpjPTwvYzJwYTptYW5pZmVzdD48L21ldGFkYXRhPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEyIiBmaWxsPSIjMUUzQTVGIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyNSkiPgogICAgPGNpcmNsZSBjeD0iMTgwIiBjeT0iMjAwIiByPSI1OCIgZmlsbD0iI2ZmZiIvPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMTY4IiByPSI3MCIgZmlsbD0iI2ZmZiIvPgogICAgPGNpcmNsZSBjeD0iMzMyIiBjeT0iMjAwIiByPSI1OCIgZmlsbD0iI2ZmZiIvPgogICAgPHJlY3QgeD0iMTUwIiB5PSIyNTgiIHdpZHRoPSIyMTIiIGhlaWdodD0iMTAiIGZpbGw9IiMxRTNBNUYiLz4KICAgIDxyZWN0IHg9IjE3NiIgeT0iMjY4IiB3aWR0aD0iMTYwIiBoZWlnaHQ9Ijk2IiByeD0iMTQiIGZpbGw9IiNmZmYiLz4KICAgIDxwYXRoIGQ9Ik0yMTQgMzE2IEwyNDQgMzQ0IEwyOTggMjg4IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMjZCMjEiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDwvZz4KPC9zdmc+Cg==) center/contain no-repeat;opacity:.9}
+.sheet{width:190mm;max-width:100%;font:14px/1.5 system-ui,sans-serif;color:#000;background:#fff;padding:8mm}
 #lblprint{display:none}.lbl{width:62mm;max-width:100%;border:1px solid #000;border-radius:4px;padding:2mm;font:11px/1.3 system-ui,sans-serif;color:#000;background:#fff;margin-bottom:6px}
 @media print{body.pl>*:not(#lblprint){display:none!important}body.pl #lblprint{display:block!important}.lbl{page-break-after:always;margin:0}}
 #t{position:fixed;left:16px;right:16px;bottom:84px;background:var(--tx);color:var(--bg);padding:10px 14px;border-radius:12px;font-size:13px;display:none;z-index:30;text-align:center}
@@ -76,7 +92,7 @@ const CAT='alimentare|farina 00:kg,farina manitoba:kg,semola rimacinata:kg,zucch
 const CATALOG=[];CAT.split(';').forEach(g=>{const[c,l]=g.split('|');l.split(',').forEach(x=>{const[n,u]=x.split(':');CATALOG.push({n,u,c})})});
 const K='ristoapp-v2';
 let S=null;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
-S=Object.assign({role:'dip',tab:'spesa',spesa:[],lotti:[],fatture:[],acconti:[],barcodes:{},custom:[],ricette:[],prezzi:{},mov:[],al:{},target:30,iva:10,storico:{},cats:['Alimentari Freschi','Bibite & Beverage','Detersivi & Sanitari'],inc:[],chk:{d:'',ids:[]},gg:30,soglia:5,nd:'',who:'',log:[],units:[{id:'u1',n:'Frigo 1',max:4,min:null},{id:'u2',n:'Congelatore 1',max:-18,min:null}],temps:[],ctasks:[{id:'c1',n:'Sanificazione piani di lavoro'},{id:'c2',n:'Pulizia affettatrice'},{id:'c3',n:'Pulizia forni e piastre'},{id:'c4',n:'Pulizia interno frigoriferi'},{id:'c5',n:'Sanificazione taglieri e coltelli'},{id:'c6',n:'Lavaggio pavimenti cucina'},{id:'c7',n:'Pulizia servizi igienici'},{id:'c8',n:'Lavaggio contenitori rifiuti'}],clog:[],sprechi:[],costi:[],msgs:[],notes:[]},S||{});
+S=Object.assign({role:'dip',tab:'spesa',spesa:[],lotti:[],fatture:[],acconti:[],barcodes:{},custom:[],ricette:[],prezzi:{},mov:[],al:{},target:30,iva:10,storico:{},cats:['Alimentari Freschi','Bibite & Beverage','Detersivi & Sanitari'],inc:[],chk:{d:'',ids:[]},gg:30,soglia:5,nd:'',who:'',log:[],units:[{id:'u1',n:'Frigo 1',max:4,min:null},{id:'u2',n:'Congelatore 1',max:-18,min:null}],temps:[],ctasks:[{id:'c1',n:'Sanificazione piani di lavoro'},{id:'c2',n:'Pulizia affettatrice'},{id:'c3',n:'Pulizia forni e piastre'},{id:'c4',n:'Pulizia interno frigoriferi'},{id:'c5',n:'Sanificazione taglieri e coltelli'},{id:'c6',n:'Lavaggio pavimenti cucina'},{id:'c7',n:'Pulizia servizi igienici'},{id:'c8',n:'Lavaggio contenitori rifiuti'}],clog:[],sprechi:[],costi:[],msgs:[],notes:[],staff:[],tour:0,bk:''},S||{});
 const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const uid=()=>Math.random().toString(36).slice(2,9);
@@ -105,29 +121,29 @@ function addSpesa(name,qty,unit){
 
 // ---- selettore catalogo ----
 function grid(c){const p=P[c],q=p.q.trim().toLowerCase();const l=all().filter(i=>(!p.cat||i.c===p.cat)&&i.n.includes(q));
-  return l.map(i=>`<button type="button" class="it ${p.sel===i.n?'on':''}" data-a="sel" data-c="${c}" data-id="${esc(i.n)}">${esc(i.n)} <small>${i.u}</small></button>`).join('')+(q&&!all().some(i=>i.n===q)?`<button type="button" class="it" data-a="newit" data-c="${c}" data-id="${esc(q)}">➕ Aggiungi “${esc(q)}”</button>`:'')}
-function picker(c){const p=P[c];return `<input data-pq="${c}" value="${esc(p.q)}" placeholder="🔍 Cerca nel catalogo…" style="flex:1 1 100%"><div class="chips">${[['','Tutti'],['alimentare','🍅 Alimenti'],['cucina','🧻 Cucina'],['pulizia','🧽 Pulizia']].map(([k,l])=>`<button type="button" class="chip ${p.cat===k?'on':''}" data-a="cat" data-c="${c}" data-id="${k}">${l}</button>`).join('')}</div><div class="cgrid" id="g-${c}">${grid(c)}</div>`}
+  return l.map(i=>`<button type="button" class="it ${p.sel===i.n?'on':''}" data-a="sel" data-c="${c}" data-id="${esc(i.n)}">${esc(i.n)} <small>${i.u}</small></button>`).join('')+(q&&!all().some(i=>i.n===q)?`<button type="button" class="it" data-a="newit" data-c="${c}" data-id="${esc(q)}"><i class="fa-solid fa-plus"></i> Aggiungi “${esc(q)}”</button>`:'')}
+function picker(c){const p=P[c];return `<input data-pq="${c}" value="${esc(p.q)}" placeholder="Cerca nel catalogo…" style="flex:1 1 100%"><div class="chips">${[['','Tutti'],['alimentare','Alimenti'],['cucina','Cucina'],['pulizia','Pulizia']].map(([k,l])=>`<button type="button" class="chip ${p.cat===k?'on':''}" data-a="cat" data-c="${c}" data-id="${k}">${l}</button>`).join('')}</div><div class="cgrid" id="g-${c}">${grid(c)}</div>`}
 const bv=(o,k,d='')=>esc(M[o][k]??d);
 
 function vSpesa(){
   const open=S.spesa.filter(i=>!i.done),done=S.spesa.filter(i=>i.done),it=P.s.sel&&find(P.s.sel);
-  let h=`<div class="card"><h2>➕ Manca qualcosa? Tocca per scegliere</h2><div class="f">${picker('s')}
+  let h=`<div class="card"><h2><i class="fa-solid fa-plus"></i> Manca qualcosa? Tocca per scegliere</h2><div class="f">${picker('s')}
   ${it?`<div class="step"><b style="flex:1;text-transform:capitalize">${esc(it.n)}</b><button class="sm" data-a="qm">−</button><b>${P.s.qty} ${it.u}</b><button class="sm" data-a="qp">+</button></div>`:''}
   <button class="btn" data-a="addsp" ${it?'':'disabled'}>Aggiungi in lista</button></div></div>
   <div class="card"><h2>Lista in tempo reale · ${open.length} articoli</h2>`;
-  h+=open.length?open.map(i=>`<div class="row"><div><b>${esc(i.name)}</b><div class="mut">${i.qty} ${esc(i.unit)} · ${i.by}</div></div><button class="chk" data-a="tg" data-id="${i.id}">○</button></div>`).join(''):'<div class="empty">Niente da comprare 🎉</div>';
+  h+=open.length?open.map(i=>`<div class="row"><div><b>${esc(i.name)}</b><div class="mut">${i.qty} ${esc(i.unit)} · ${i.by}</div></div><button class="chk" data-a="tg" data-id="${i.id}">○</button></div>`).join(''):'<div class="empty">Niente da comprare</div>';
   h+='</div>';
-  if(S.role==='tit')h+=`<div class="card"><h2>📋 Lista definitiva</h2><button class="sm" data-a="cp">Copia lista</button> ${done.length?`<button class="sm" data-a="cl">Svuota presi (${done.length})</button>`:''}</div>`;
+  if(S.role==='tit')h+=`<div class="card"><h2><i class="fa-solid fa-clipboard-list"></i> Lista definitiva</h2><button class="sm" data-a="cp">Copia lista</button> ${done.length?`<button class="sm" data-a="cl">Svuota presi (${done.length})</button>`:''}</div>`;
   if(done.length)h+=`<div class="card"><h2>Presi</h2>${done.map(i=>`<div class="row"><div><b style="text-decoration:line-through;color:var(--mut)">${esc(i.name)}</b> <span class="mut">${i.qty} ${esc(i.unit)}</span></div><button class="chk" data-a="tg" data-id="${i.id}">✓</button></div>`).join('')}</div>`;
   return h;
 }
 
 function vLotti(){
   const sups=[...new Set(S.fatture.map(f=>f.sup).concat(S.lotti.map(l=>l.sup)))].filter(Boolean),it=P.l.sel&&find(P.l.sel);
-  let h=`<div class="card"><h2>🏷️ Etichette lotto</h2><div class="f"><button class="sm dk" data-a="scan" data-id="cerca" style="flex:1"><i class="fa-solid fa-barcode"></i> Scansiona etichetta</button><button class="sm" data-a="etm" style="flex:1"><i class="fa-solid fa-utensils"></i> Etichetta prodotto preparato</button></div></div><div class="card"><h2>📥 Arrivo merce</h2><div class="f">
-  <button class="sm dk" data-a="scan" style="flex:1">📷 Scansiona codice</button><button class="sm" data-a="pick" data-id="lf" style="flex:1">🖼️ Foto etichetta</button>
+  let h=`<div class="card"><h2><i class="fa-solid fa-tags"></i> Etichette lotto</h2><div class="f"><button class="sm dk" data-a="scan" data-id="cerca" style="flex:1"><i class="fa-solid fa-barcode"></i> Scansiona etichetta</button><button class="sm" data-a="etm" style="flex:1"><i class="fa-solid fa-utensils"></i> Etichetta prodotto preparato</button></div></div><div class="card"><h2><i class="fa-solid fa-box-open"></i> Arrivo merce</h2><div class="f">
+  <button class="sm dk" data-a="scan" style="flex:1"><i class="fa-solid fa-camera"></i> Scansiona codice</button><button class="sm" data-a="pick" data-id="lf" style="flex:1"><i class="fa-solid fa-image"></i> Foto etichetta</button>
   <input type="file" id="lf" accept="image/*" capture="environment" hidden data-fi="L">
-  ${FILE.L?'<span class="mut" style="flex:1 1 100%">📎 foto allegata</span>':''}
+  ${FILE.L?'<span class="mut" style="flex:1 1 100%"><i class="fa-solid fa-paperclip"></i> foto allegata</span>':''}
   ${it?`<b style="flex:1 1 100%;text-transform:capitalize" class="ok">✓ ${esc(it.n)} (${it.u}) <button class="sm" data-a="unsel">cambia</button></b>`:picker('l')}
   </div><form data-f="lotto" style="margin-top:8px">
   <input data-b="L.lot" value="${bv('L','lot')}" placeholder="N° lotto" required>
@@ -155,7 +171,7 @@ const pr=n=>(S.prezzi[n]||{}).p||0;
 let SUG=[];
 P.r={q:'',cat:'',sel:null};P.a={q:'',cat:'',sel:null};P.o=null;P.c=null;M.R={};
 const AL=['Glutine','Crostacei','Uova','Pesce','Arachidi','Soia','Latte','Frutta a guscio','Sedano','Senape','Sesamo','Solfiti','Lupini','Molluschi'];
-const ALI=['🌾','🦐','🥚','🐟','🥜','🫘','🥛','🌰','🥬','🟡','⚪','🍷','🌼','🐚'];
+const ALI=['1','2','3','4','5','6','7','8','9','10','11','12','13','14'];
 const PRE={0:'farina 00,farina manitoba,semola rimacinata,pasta,savoiardi,birra',1:'gamberi',2:'uova,savoiardi',3:'pesce fresco,tonno in scatola',6:'mozzarella,fiordilatte,parmigiano,pecorino,ricotta,gorgonzola,mascarpone,burro,latte,panna',11:'vino bianco,vino rosso,aceto',13:'calamari,vongole'};
 const alOf=n=>{if(S.al[n])return S.al[n];const o={};Object.entries(PRE).forEach(([k,v])=>{if(v.split(',').includes(n))o[k]='c'});return o};
 const rAl=r=>{const o={};r.items.forEach(i=>Object.entries(alOf(i.n)).forEach(([k,v])=>{if(v==='c'||!o[k])o[k]=v}));return o};
@@ -165,7 +181,7 @@ const rnd=x=>Math.ceil(x*2)/2;
 
 function vRicette(){
   const net=p=>p/(1+S.iva/100);
-  let h=`<div class="card"><h2>🍕 Food cost</h2><div class="f"><label class="mut" style="flex:1">Obiettivo %<input data-g="target" type="number" value="${S.target}"></label><label class="mut" style="flex:1">IVA vendite %<input data-g="iva" type="number" value="${S.iva}"></label></div><p class="mut">I costi usano l’ultimo prezzo di ogni ingrediente (IVA esclusa): arriva dalle fatture XML oppure lo scrivi a mano dentro il piatto.</p></div>
+  let h=`<div class="card"><h2><i class="fa-solid fa-pizza-slice"></i> Food cost</h2><div class="f"><label class="mut" style="flex:1">Obiettivo %<input data-g="target" type="number" value="${S.target}"></label><label class="mut" style="flex:1">IVA vendite %<input data-g="iva" type="number" value="${S.iva}"></label></div><p class="mut">I costi usano l’ultimo prezzo di ogni ingrediente (IVA esclusa): arriva dalle fatture XML oppure lo scrivi a mano dentro il piatto.</p></div>
   <div class="card"><h2>Nuovo piatto</h2><form data-f="ric"><input data-b="R.n" value="${bv('R','n')}" placeholder="Es. pizza margherita" required><input data-b="R.p" type="number" step="0.01" value="${bv('R','p')}" placeholder="Prezzo attuale € (IVA incl.)"><input data-b="R.por" type="number" step="0.5" min="0.5" value="${bv('R','por','1')}" placeholder="Porzioni" style="flex:0 0 90px"><button class="btn">Crea piatto</button></form></div>`;
   S.ricette.forEach(r=>{
     const c=rCost(r),f=r.price>0?c/net(r.price)*100:null,mi=rMiss(r),a=rAl(r),open=P.o===r.id;
@@ -173,7 +189,7 @@ function vRicette(){
     if(r.price>0&&c>0)h+=`<div class="mut">Margine lordo: <b>${eur(net(r.price)-c)}</b> a porzione (${(100-f).toFixed(0)}% del prezzo netto)</div>`;
     if(f!=null&&wasteRate()>0)h+=`<div class="mut">Food cost reale con sprechi: <b>${(f*(1+wasteRate())).toFixed(0)}%</b> (sprechi = ${(wasteRate()*100).toFixed(1)}% degli acquisti)</div>`;
     if(c>0)h+=`<div style="margin-top:4px">Prezzo consigliato al ${S.target}%: <b>${eur(rnd(c/(S.target/100)*(1+S.iva/100)))}</b></div>`;
-    if(mi)h+=`<div class="warn mut">⚠️ ${mi} ingredienti senza prezzo: il costo è sottostimato</div>`;
+    if(mi)h+=`<div class="warn mut"><i class="fa-solid fa-triangle-exclamation"></i> ${mi} ingredienti senza prezzo: il costo è sottostimato</div>`;
     const al=Object.keys(a).map(i=>ALI[i]+' '+AL[i]+(a[i]==='t'?' (tracce)':''));
     if(al.length)h+=`<div class="mut">Allergeni: ${al.join(' · ')}</div>`;
     if(open){
@@ -183,20 +199,20 @@ function vRicette(){
     h+='</div>';
   });
   const sel=P.a.sel,cur=sel?alOf(sel):{};
-  h+=`<div class="card"><h2>⚠️ Allergeni degli ingredienti</h2><p class="mut">Confronta con l’etichetta del prodotto che usi. Tocca: 1 volta contiene, 2 volte tracce, 3 volte nessuno.</p><div class="f">`+(sel?`<b style="flex:1 1 100%;text-transform:capitalize">${esc(sel)} <button class="sm" data-a="aun">cambia</button></b><div class="chips" style="flex-wrap:wrap">${AL.map((a,i)=>`<button class="chip ${cur[i]?'on':''}" data-a="alt" data-id="${i}">${ALI[i]} ${a}${cur[i]==='c'?' ●':cur[i]==='t'?' ○':''}</button>`).join('')}</div>`:picker('a'))+'</div></div>';
+  h+=`<div class="card"><h2><i class="fa-solid fa-triangle-exclamation"></i> Allergeni degli ingredienti</h2><p class="mut">Confronta con l’etichetta del prodotto che usi. Tocca: 1 volta contiene, 2 volte tracce, 3 volte nessuno.</p><div class="f">`+(sel?`<b style="flex:1 1 100%;text-transform:capitalize">${esc(sel)} <button class="sm" data-a="aun">cambia</button></b><div class="chips" style="flex-wrap:wrap">${AL.map((a,i)=>`<button class="chip ${cur[i]?'on':''}" data-a="alt" data-id="${i}">${ALI[i]} ${a}${cur[i]==='c'?' ●':cur[i]==='t'?' ○':''}</button>`).join('')}</div>`:picker('a'))+'</div></div>';
   return h;
 }
 
 function vAllerg(){
-  let h=`<div class="card"><h2>⚠️ Registro allergeni · Reg. UE 1169/2011</h2><p class="mut">Aggiornato al ${new Date().toLocaleDateString('it-IT')} · <b class="bad">●</b> contiene · <b class="warn">○</b> può contenere tracce</p>`;
+  let h=`<div class="card"><h2><i class="fa-solid fa-triangle-exclamation"></i> Registro allergeni · Reg. UE 1169/2011</h2><p class="mut">Aggiornato al ${new Date().toLocaleDateString('it-IT')} · <b class="bad">●</b> contiene · <b class="warn">○</b> può contenere tracce</p>`;
   if(!S.ricette.length)h+='<div class="empty">Nessun piatto: il titolare li crea nella sezione Ricette.</div>';
   else h+=`<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:12px;min-width:100%"><tr><th style="text-align:left;padding:6px">Piatto</th>${AL.map((a,i)=>`<th style="padding:4px"><div style="font-size:16px">${ALI[i]}</div><div style="font-size:9px;color:var(--mut)">${a}</div></th>`).join('')}</tr>`+S.ricette.map(r=>{const o=rAl(r);return `<tr style="border-top:1px solid var(--bd)"><td style="padding:6px;text-transform:capitalize;font-weight:600;white-space:nowrap">${esc(r.n)}</td>${AL.map((a,i)=>`<td style="text-align:center;font-size:16px" class="${o[i]==='c'?'bad':'warn'}">${o[i]==='c'?'●':o[i]==='t'?'○':''}</td>`).join('')}</tr>`}).join('')+'</table></div>';
-  return h+`<button class="sm np" data-a="print" style="margin:10px 0">🖨️ Stampa</button><p class="mut"><b>Note legali.</b> Gli allergeni vanno comunicati al cliente anche per i piatti non preconfezionati: il personale deve poter rispondere a ogni richiesta e il registro deve restare disponibile in sala.</p><p class="mut"><b>Contaminazioni crociate.</b> In una cucina condivisa non si può escludere il contatto tra ingredienti (piani, fritture, utensili): chi ha un’allergia grave va avvisato. Il simbolo ○ indica le tracce dichiarate dal produttore, non quelle dovute alle lavorazioni del locale.</p><p class="mut">Elenco di supporto costruito dagli ingredienti inseriti: aggiornalo a ogni cambio di ricetta o prodotto e confrontalo con le etichette.</p></div>`;
+  return h+`<button class="sm np" data-a="print" style="margin:10px 0"><i class="fa-solid fa-print"></i> Stampa</button><p class="mut"><b>Note legali.</b> Gli allergeni vanno comunicati al cliente anche per i piatti non preconfezionati: il personale deve poter rispondere a ogni richiesta e il registro deve restare disponibile in sala.</p><p class="mut"><b>Contaminazioni crociate.</b> In una cucina condivisa non si può escludere il contatto tra ingredienti (piani, fritture, utensili): chi ha un’allergia grave va avvisato. Il simbolo ○ indica le tracce dichiarate dal produttore, non quelle dovute alle lavorazioni del locale.</p><p class="mut">Elenco di supporto costruito dagli ingredienti inseriti: aggiornalo a ogni cambio di ricetta o prodotto e confrontalo con le etichette.</p></div>`;
 }
 
 function vConsumi(){
   const names=[...new Set(S.mov.map(m=>m.n))];
-  if(!names.length)return '<div class="card"><h2>📈 Storico consumi</h2><div class="empty">Appare dopo i primi scarichi di magazzino.</div></div>';
+  if(!names.length)return '<div class="card"><h2><i class="fa-solid fa-chart-column"></i> Storico consumi</h2><div class="empty">Appare dopo i primi scarichi di magazzino.</div></div>';
   const tot=n=>S.mov.filter(m=>m.n===n).reduce((a,m)=>a+m.q,0);
   names.sort((a,b)=>tot(b)-tot(a));
   const sel=names.includes(P.c)?P.c:names[0],u=(find(sel)||{}).u||'';
@@ -211,9 +227,9 @@ function vConsumi(){
     const c28=new Date(Date.now()-28*864e5).toLocaleDateString('sv-SE');
     SUG=names.map(n=>{const need=S.mov.filter(m=>m.n===n&&m.d>=c28).reduce((a,m)=>a+m.q,0)/4,st=S.lotti.filter(l=>l.name===n).reduce((a,l)=>a+l.rem,0),ls=S.lotti.filter(l=>l.name===n&&l.sup);
       return{n,u:(find(n)||{}).u||'',sup:ls.length?ls[ls.length-1].sup:'Senza fornitore',need,st,buy:Math.ceil((need-st)*10)/10}}).filter(x=>x.buy>0);
-    fc=SUG.length?`<button class="btn" data-a="fall" style="margin-bottom:8px">➕ Aggiungi tutto alla lista spesa (${SUG.length})</button>`+[...new Set(SUG.map(x=>x.sup))].map(s=>`<div class="tot" style="border-top:1px solid var(--bd)"><span>${esc(s)}</span><button class="sm" data-a="ord" data-id="${esc(s)}">Copia ordine</button></div>`+SUG.filter(x=>x.sup===s).map(x=>`<div class="mut">${esc(x.n)}: ordina ${x.buy} ${esc(x.u)} (fabbisogno ${x.need.toFixed(1)} · scorta ${x.st})</div>`).join('')).join(''):'<p class="mut">Le scorte coprono il consumo previsto.</p>';
+    fc=SUG.length?`<button class="btn" data-a="fall" style="margin-bottom:8px"><i class="fa-solid fa-plus"></i> Aggiungi tutto alla lista spesa (${SUG.length})</button>`+[...new Set(SUG.map(x=>x.sup))].map(s=>`<div class="tot" style="border-top:1px solid var(--bd)"><span>${esc(s)}</span><button class="sm" data-a="ord" data-id="${esc(s)}">Copia ordine</button></div>`+SUG.filter(x=>x.sup===s).map(x=>`<div class="mut">${esc(x.n)}: ordina ${x.buy} ${esc(x.u)} (fabbisogno ${x.need.toFixed(1)} · scorta ${x.st})</div>`).join('')).join(''):'<p class="mut">Le scorte coprono il consumo previsto.</p>';
   }
-  return `<div class="card"><h2>📈 Storico consumi (28 giorni)</h2><select data-ch="1" style="width:100%;margin-bottom:8px">${names.map(n=>`<option ${n===sel?'selected':''}>${esc(n)}</option>`).join('')}</select><svg viewBox="0 0 280 108" style="width:100%;height:130px">${bars}</svg><div class="mut"><span style="color:#c2410c">■</span> weekend · <span style="color:#94a3b8">■</span> feriali${ra!=null?` — nel weekend consumate ${ra>=1?'+':''}${Math.round((ra-1)*100)}% al giorno rispetto ai feriali`:''}</div></div><div class="card"><h2>🛒 Fabbisogno a 7 giorni</h2>${fc}<p class="mut">Stima = consumo medio ultime 4 settimane meno scorte attuali.</p></div>`;
+  return `<div class="card"><h2><i class="fa-solid fa-chart-column"></i> Storico consumi (28 giorni)</h2><select data-ch="1" style="width:100%;margin-bottom:8px">${names.map(n=>`<option ${n===sel?'selected':''}>${esc(n)}</option>`).join('')}</select><svg viewBox="0 0 280 108" style="width:100%;height:130px">${bars}</svg><div class="mut"><span style="color:#c2410c">■</span> weekend · <span style="color:#94a3b8">■</span> feriali${ra!=null?` — nel weekend consumate ${ra>=1?'+':''}${Math.round((ra-1)*100)}% al giorno rispetto ai feriali`:''}</div></div><div class="card"><h2><i class="fa-solid fa-cart-shopping"></i> Fabbisogno a 7 giorni</h2>${fc}<p class="mut">Stima = consumo medio ultime 4 settimane meno scorte attuali.</p></div>`;
 }
 
 // ===== LETTURA AUTOMATICA: parser del testo OCR =====
@@ -261,7 +277,7 @@ async function ocr(blob){
 async function restore(f){try{const o=JSON.parse(await f.text());if(typeof o!=='object'||!o.spesa)throw 0;S=Object.assign({},S,o);S.role='dip';save();toast('Backup ripristinato ✓')}catch(e){toast('File di backup non valido')}render()}
 function vListino(){
   const ns=Object.keys(S.prezzi).filter(n=>pr(n)>0).sort();
-  return '<div class="card"><h2>💶 Listino prezzi (dalle fatture)</h2>'+(ns.length?ns.map(n=>{
+  return '<div class="card"><h2><i class="fa-solid fa-euro-sign"></i> Listino prezzi (dalle fatture)</h2>'+(ns.length?ns.map(n=>{
     const st=S.storico[n]||[],cur=S.prezzi[n],prev=st.length>1?st[st.length-2].p:0,pc=prev>0?(cur.p-prev)/prev*100:null,sp=st.length&&st[st.length-1].s?' · '+esc(st[st.length-1].s):'';
     return `<div class="row"><div><b>${esc(n)}</b><div class="mut">${cur.d?fd(cur.d):''}${sp}</div></div><div style="text-align:right"><b style="text-transform:none">${eur(cur.p)}/${(find(n)||{}).u||'u'}</b>${pc!=null&&Math.abs(pc)>=.5?`<div class="mut ${pc>0?'bad':'ok'}">${pc>0?'▲ +':'▼ '}${pc.toFixed(1)}%</div>`:''}</div></div>`}).join(''):'<div class="empty">I prezzi si aggiornano da soli quando salvi una fattura letta (e alimentano il food cost).</div>')+'</div>';
 }
@@ -285,7 +301,8 @@ function prodForm(){
   return `<h2 class="text-lg font-bold mb-2"><i class="fa-solid fa-plus"></i> Aggiungi prodotto al check-in</h2><form data-f="prod" class="flex flex-col gap-2"><input name="n" list="pl" placeholder="Nome prodotto" required autocomplete="off"><datalist id="pl">${all().map(x=>`<option>${esc(x.n)}</option>`).join('')}</datalist><select name="c">${S.cats.map(c=>`<option>${esc(c)}</option>`).join('')}</select><div class="flex gap-2"><input name="q" type="number" step="0.01" min="0.01" placeholder="Quantità" required><select name="u">${['kg','litri','pezzi','taniche','confezioni'].map(u=>`<option>${u}</option>`).join('')}</select></div><input name="l" placeholder="Codice lotto" required><label class="mut">Scadenza (facoltativa)<input name="e" type="date" style="width:100%"></label><div class="flex gap-2"><button type="button" class="sm" data-a="closemd" style="flex:1">Annulla</button><button class="btn" style="flex:2">Salva prodotto</button></div></form>`}
 function guide(){
   const d=(t,b)=>`<details class="border-t py-2" style="border-color:var(--bd)"><summary class="font-semibold cursor-pointer">${t}</summary><div class="mut mt-1">${b}</div></details>`;
-  return `<div class="flex justify-between items-center mb-2"><h2 class="text-lg font-bold"><i class="fa-solid fa-circle-question"></i> Guida a Chef Control</h2><button class="sm" data-a="closemd">Chiudi</button></div>`
+  return `<div class="flex justify-between items-center mb-2"><h2 class="text-lg font-bold"><i class="fa-solid fa-circle-question"></i> Guida a Chef Control</h2><button class="sm" data-a="closemd">Chiudi</button></div><div class="flex gap-2 mb-2"><button class="sm" data-a="tour" data-id="0" style="flex:1">Rivedi il tour</button><button class="sm" data-a="sheet" style="flex:1"><i class="fa-solid fa-print"></i> Foglio da stampare</button></div>`
+  +d('La schermata “Oggi”','Ogni giorno apri <b>Oggi</b>: 5 pulsanti grandi (Check-in, Temperature, Pulizie, Aggiungi alla spesa, Spreco). <b>Verde</b> = fatto, <b>arancio</b> = da fare, <b>rosso</b> = problema. Tutto il resto è sotto “Altro”. In ogni sezione il pulsante “Come si usa?” spiega i passaggi.')
   +d('1. Installare l’app sul telefono','<b>iPhone</b>: apri il link con Safari → tasto Condividi → “Aggiungi a schermata Home”.<br><b>Android</b>: apri con Chrome → menu ⋮ → “Installa app” (o “Aggiungi a schermata Home”).')
   +d('2. Dipendente o titolare','All’apertura sei in <b>modalità dipendente</b>: vedi solo Check-in e Magazzino. Con “Area titolare” e il PIN si aprono Incassi, Fatture e Ricette. La prima volta crei tu il PIN (4-8 cifre). Si blocca da solo dopo 10 minuti senza usarla, oppure con “Blocca”. Il PIN protegge la schermata su questo telefono: non cifra i dati.')
   +d('3. Check-in cucina (prima del servizio serale)','Apri <b>Check-in</b>: i prodotti sono divisi per categoria. Controlla la quantità (puoi correggerla) e tocca il cerchio per segnarlo verificato. Con “+ Prodotto” aggiungi al volo un articolo nuovo: nome, categoria, quantità, unità e codice lotto. Le categorie si aggiungono o tolgono in fondo alla pagina.')
@@ -306,7 +323,7 @@ function guide(){
 function vCheckin(){
   if(S.chk.d!==ld())S.chk={d:ld(),ids:[]};
   const act=S.lotti.filter(l=>l.rem>0),n=act.filter(l=>S.chk.ids.includes(l.id)).length,ic=['fa-carrot','fa-bottle-water','fa-spray-can-sparkles'];
-  let h=`<div class="card"><div class="flex items-center justify-between gap-2"><div><h2 style="margin:0">Check-in cucina · servizio serale</h2><div class="mut">${n}/${act.length} prodotti verificati · ${fd(ld())}</div></div><button class="btn" style="flex:none;width:auto;padding:10px 14px" data-a="addp"><i class="fa-solid fa-plus"></i> Prodotto</button></div><div class="h-2 rounded-full mt-3" style="background:var(--chip)"><div class="h-2 rounded-full" style="width:${act.length?n/act.length*100:0}%;background:var(--ok)"></div></div>${act.length&&n===act.length?'<p class="ok mt-2"><b>✓ Check-in completato: cucina pronta per il servizio.</b></p>':''}</div>`;
+  let h=`<div class="card"><div class="flex items-center justify-between gap-2"><div><h2 style="margin:0">Check-in cucina · servizio serale</h2><div class="mut">${n}/${act.length} prodotti verificati · ${fd(ld())}</div></div><button class="btn" style="flex:none;width:auto;padding:12px 16px" data-a="addp"><i class="fa-solid fa-plus"></i> Prodotto</button></div><div class="flex gap-2 mt-3"><button class="sm dk" data-a="cvall" style="flex:1"><i class="fa-solid fa-check-double"></i> Segna tutto verificato</button></div><div class="h-2 rounded-full mt-3" style="background:var(--chip)"><div class="h-2 rounded-full" style="width:${act.length?n/act.length*100:0}%;background:var(--ok)"></div></div>${act.length&&n===act.length?'<p class="ok mt-2"><b>✓ Check-in completato: cucina pronta per il servizio.</b></p>':''}</div>`;
   S.cats.forEach((c,i)=>{const ls=act.filter(l=>catOf(l)===c);
     h+=`<div class="card"><h2><i class="fa-solid ${ic[i]||'fa-box'}"></i> ${esc(c)} <span class="mut">(${ls.length})</span></h2>`+(ls.length?ls.map(l=>{const ok=S.chk.ids.includes(l.id);
       return `<div class="row"><div><b>${esc(l.name)}</b><div class="mut">Lotto ${esc(l.lot||'—')}${l.exp?' · scad. '+fd(l.exp):''}</div></div><div class="qd"><input type="number" step="0.1" min="0" value="${l.rem}" data-cq="${l.id}"><span class="mut">${esc(l.unit)}</span><button class="chk" style="${ok?'background:var(--ok);color:#fff;border-color:var(--ok)':''}" data-a="cv" data-id="${l.id}">${ok?'✓':'○'}</button></div></div>`}).join(''):'<div class="empty">Nessun prodotto: usa “+ Prodotto”</div>')+'</div>'});
@@ -356,7 +373,7 @@ async function readLabel(f){
 }
 function vImpost(){
   const p=prov();
-  return `<div class="card"><h2><i class="fa-solid fa-gear"></i> Lettura automatica, PIN e backup</h2><p class="mut">Senza chiave le foto sono lette da un OCR gratuito nel telefono (serve internet la prima volta). Con la chiave del servizio AI la lettura è molto più precisa. La chiave resta solo su questo telefono; le letture si pagano a consumo e l’immagine viene inviata al servizio scelto.</p><div class="f" style="margin-bottom:8px"><label class="mut" style="flex:1">Soglia aumento prezzi %<input data-g="soglia" type="number" min="1" value="${S.soglia}"></label><label class="mut" style="flex:1">Giorni di pagamento<input data-g="gg" type="number" min="0" value="${S.gg}"></label></div><select data-prov="1" style="width:100%;margin-bottom:8px"><option value="openai" ${p==='openai'?'selected':''}>OpenAI (GPT-4o Vision) · foto</option><option value="anthropic" ${p==='anthropic'?'selected':''}>Anthropic (Claude) · foto e PDF</option></select><input type="password" data-key="1" value="${esc(keyOf(p))}" placeholder="Chiave API ${p==='openai'?'OpenAI':'Anthropic'} (facoltativa)"><div class="f" style="margin-top:8px"><button class="sm" data-a="bk" style="flex:1"><i class="fa-solid fa-download"></i> Backup</button><button class="sm" data-a="pick" data-id="fr" style="flex:1"><i class="fa-solid fa-upload"></i> Ripristina</button><button class="sm" data-a="chpin" style="flex:1"><i class="fa-solid fa-key"></i> Cambia PIN</button><input type="file" id="fr" accept=".json,application/json" hidden data-rest="1"></div><p class="mut">Il backup contiene dati e prezzi, non le foto allegate né le chiavi.</p></div>`;
+  return `<div class="card"><h2><i class="fa-solid fa-gear"></i> Lettura automatica, PIN e backup</h2><p class="mut">Senza chiave le foto sono lette da un OCR gratuito nel telefono (serve internet la prima volta). Con la chiave del servizio AI la lettura è molto più precisa. La chiave resta solo su questo telefono; le letture si pagano a consumo e l’immagine viene inviata al servizio scelto.</p><p class="mut" style="margin:0 0 4px"><b>Colleghi (scelta del nome)</b></p><div class="chips" style="flex-wrap:wrap;margin-bottom:6px">${S.staff.map(n=>`<span class="chip on">${esc(n)} <a href="#" data-a="sdel" data-id="${esc(n)}" style="color:#fff;margin-left:6px">✕</a></span>`).join('')||'<span class="mut">Nessun collega: si aggiungono dal “Chi sei?”</span>'}</div><form data-f="staff" class="flex gap-2" style="margin-bottom:10px"><input name="n" placeholder="Aggiungi collega" required><button class="sm">Aggiungi</button></form><div class="f" style="margin-bottom:8px"><label class="mut" style="flex:1">Soglia aumento prezzi %<input data-g="soglia" type="number" min="1" value="${S.soglia}"></label><label class="mut" style="flex:1">Giorni di pagamento<input data-g="gg" type="number" min="0" value="${S.gg}"></label></div><select data-prov="1" style="width:100%;margin-bottom:8px"><option value="openai" ${p==='openai'?'selected':''}>OpenAI (GPT-4o Vision) · foto</option><option value="anthropic" ${p==='anthropic'?'selected':''}>Anthropic (Claude) · foto e PDF</option></select><input type="password" data-key="1" value="${esc(keyOf(p))}" placeholder="Chiave API ${p==='openai'?'OpenAI':'Anthropic'} (facoltativa)"><div class="f" style="margin-top:8px"><button class="sm" data-a="bk" style="flex:1"><i class="fa-solid fa-download"></i> Backup</button><button class="sm" data-a="pick" data-id="fr" style="flex:1"><i class="fa-solid fa-upload"></i> Ripristina</button><button class="sm" data-a="chpin" style="flex:1"><i class="fa-solid fa-key"></i> Cambia PIN</button><input type="file" id="fr" accept=".json,application/json" hidden data-rest="1"></div><p class="mut">Il backup contiene dati e prezzi, non le foto allegate né le chiavi.</p></div>`;
 }
 
 function chips(k,l){return `<div class="chips" style="margin-bottom:10px">${l.map(([id,t])=>`<button class="chip ${P.sub[k]===id?'on':''}" data-a="sub" data-c="${k}" data-id="${id}">${t}</button>`).join('')}</div>`}
@@ -375,7 +392,6 @@ const day=i=>new Date(i).toLocaleDateString('sv-SE');
 const nz=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 function lg(k,t,ref){S.log.push({id:uid(),at:new Date().toISOString(),by:S.who||'—',r:S.role,k,t,ref:ref||''});if(S.log.length>5000)S.log.splice(0,S.log.length-5000)}
 function needWho(){if(S.who)return false;modal(whoForm());return true}
-const whoForm=()=>`<h2 class="text-lg font-bold mb-1"><i class="fa-solid fa-user"></i> Chi sei?</h2><p class="mut mb-2">Il tuo nome viene registrato accanto a ogni operazione (temperature, pulizie, lotti, sprechi): serve per la rintracciabilità HACCP.</p><form data-f="who" class="flex flex-col gap-2"><input name="w" value="${esc(S.who)}" placeholder="Nome e cognome" required maxlength="40"><button class="btn">Salva</button></form>`;
 function dl(name,text,mime){const u=URL.createObjectURL(new Blob([text],{type:mime||'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),3000)}
 
 // ---- fatture doppie, unità di misura, IVA ----
@@ -410,11 +426,11 @@ function mkLine(d,n,q,p,lot,u){
 function fcalc(){const F=M.F,amt=parseFloat(F.amt)||0,rate=+F.rate||10,iva=F.iva!==undefined&&F.iva!==''?parseFloat(F.iva)||0:amt-amt/(1+rate/100);return{amt,iva,imp:amt-iva}}
 function lineHTML(l,i){
   const it=find(l.n),iu=it?it.u:'',f=parseFloat(l.f),okf=!l.n||f>0,q=+l.q||0,p=+l.p||0,pn=l.n&&f>0?p/f:p,qn=l.n&&f>0?q*f:q,o=pr(l.n),pc=l.n&&o>0&&pn>0?(pn-o)/o*100:null;
-  const warn=l.n&&!okf?`<div class="bad"><b>⚠️ Unità non coerente:</b> 1 ${esc(l.u||'unità')} = quanti ${esc(iu)}? Compila il campo: senza, il food cost sarebbe sbagliato.</div>`:(l.n&&!l.u?'<div class="warn mut">Unità non indicata in fattura: assunta uguale a quella dell’ingrediente. Verifica.</div>':'');
+  const warn=l.n&&!okf?`<div class="bad"><b><i class="fa-solid fa-triangle-exclamation"></i> Unità non coerente:</b> 1 ${esc(l.u||'unità')} = quanti ${esc(iu)}? Compila il campo: senza, il food cost sarebbe sbagliato.</div>`:(l.n&&!l.u?'<div class="warn mut">Unità non indicata in fattura: assunta uguale a quella dell’ingrediente. Verifica.</div>':'');
   return `<div style="flex:1 1 100%;border:1px solid var(--bd);border-radius:12px;padding:8px"><div class="mut">${esc(l.d)}</div><div class="f"><select data-ln="${i}.n"><option value="">— non collegare —</option>${all().map(x=>`<option ${x.n===l.n?'selected':''}>${esc(x.n)}</option>`).join('')}</select><input data-ln="${i}.q" type="number" step="0.01" value="${esc(l.q)}" style="flex:0 0 70px"><input data-ln="${i}.p" type="number" step="0.0001" value="${esc(l.p)}" style="flex:0 0 84px">
   ${l.n?`<input data-ln="${i}.u" list="ul" value="${esc(l.u)}" placeholder="unità in fattura" style="flex:1 1 90px"><span class="mut">1 unità =</span><input data-ln="${i}.f" type="number" step="0.0001" value="${esc(l.f)}" style="flex:0 0 80px"><span class="mut">${esc(iu)}</span>`:''}
   <input data-ln="${i}.lot" value="${esc(l.lot||'')}" placeholder="Codice lotto (L./Lot./Batch)" style="flex:1 1 100%"></div>${warn}
-  <div class="mut ${pc==null?'':pc>=S.soglia?'bad':pc<-.5?'ok':''}">${!l.n?'Non collegata: non aggiorna i costi':okf?`→ ${qn.toFixed(2)} ${esc(iu)} a ${eur(pn)}/${esc(iu)}${o>0?` · prima ${eur(o)} (${pc>=0?'▲ +':'▼ '}${pc.toFixed(1)}%)${pc>=S.soglia?' <b>⚠️ aumento oltre la soglia del '+S.soglia+'%</b>':''}`:' · primo prezzo registrato'}`:''}${p>0&&q>0?' · riga '+eur(p*q):''}</div></div>`;
+  <div class="mut ${pc==null?'':pc>=S.soglia?'bad':pc<-.5?'ok':''}">${!l.n?'Non collegata: non aggiorna i costi':okf?`→ ${qn.toFixed(2)} ${esc(iu)} a ${eur(pn)}/${esc(iu)}${o>0?` · prima ${eur(o)} (${pc>=0?'▲ +':'▼ '}${pc.toFixed(1)}%)${pc>=S.soglia?' <b><i class="fa-solid fa-triangle-exclamation"></i> aumento oltre la soglia del '+S.soglia+'%</b>':''}`:' · primo prezzo registrato'}`:''}${p>0&&q>0?' · riga '+eur(p*q):''}</div></div>`;
 }
 function xmlBlock(){
   const L=M.F.lines||[],c=fcalc(),sumL=L.reduce((a,l)=>a+(+l.q||0)*(+l.p||0),0),coh=!L.length||Math.abs(sumL-c.imp)<=Math.max(1,c.imp*.02);
@@ -458,11 +474,11 @@ async function scanInvoice(f){
 }
 
 function fsumHTML(){const F=M.F,c=fcalc(),dp=F.sup&&F.num?dupCheck(F.sup,F.num,c.amt,F.date||today()):null;
-  return `<div class="mut">Imponibile ${eur(c.imp)} · IVA ${eur(c.iva)}${F.iva===undefined||F.iva===''?' (stimata)':''} · scadenza ${fd(F.due||addDays(F.date||today(),S.gg))}</div>${dp?`<div class="bad"><b>⚠️ ${dp.k==='exact'?'Fattura già registrata':'Possibile doppione'}</b>: ${esc(dp.f.sup)} n. ${esc(dp.f.num)} del ${fd(dp.f.date)} · ${eur(dp.f.amt)}</div>`:''}`}
+  return `<div class="mut">Imponibile ${eur(c.imp)} · IVA ${eur(c.iva)}${F.iva===undefined||F.iva===''?' (stimata)':''} · scadenza ${fd(F.due||addDays(F.date||today(),S.gg))}</div>${dp?`<div class="bad"><b><i class="fa-solid fa-triangle-exclamation"></i> ${dp.k==='exact'?'Fattura già registrata':'Possibile doppione'}</b>: ${esc(dp.f.sup)} n. ${esc(dp.f.num)} del ${fd(dp.f.date)} · ${eur(dp.f.amt)}</div>`:''}`}
 function vFatture(){
   const sups=[...new Set(S.fatture.map(f=>f.sup))],F=M.F,auto=F.auto==='ocr'||F.auto==='ai';
   const hl=k=>F.auto&&F.auto!=='xml'&&!(F.touched||{})[k]&&F[k]?' class="auto"':'';
-  let h=`<div class="card"><h2>🧾 Nuova fattura</h2>${auto?'<p class="warn"><b>Dati letti automaticamente</b>: le caselle gialle vanno confrontate con la fattura prima di salvare.</p>':''}${F.prev?`<img src="${F.prev}" data-a="zoom" style="max-height:110px;border-radius:8px;margin-bottom:8px" title="Tocca per ingrandire">`:''}<form data-f="fatt">
+  let h=`<div class="card"><h2><i class="fa-solid fa-file-invoice"></i> Nuova fattura</h2>${auto?'<p class="warn"><b>Dati letti automaticamente</b>: le caselle gialle vanno confrontate con la fattura prima di salvare.</p>':''}${F.prev?`<img src="${F.prev}" data-a="zoom" style="max-height:110px;border-radius:8px;margin-bottom:8px" title="Tocca per ingrandire">`:''}<form data-f="fatt">
   <input data-b="F.sup"${hl('sup')} list="sf" value="${bv('F','sup')}" placeholder="Fornitore" required><datalist id="sf">${sups.map(s=>`<option>${esc(s)}</option>`).join('')}</datalist>
   <input data-b="F.num"${hl('num')} value="${bv('F','num')}" placeholder="N° fattura" required>
   <input data-b="F.amt"${hl('amt')} type="number" step="0.01" min="0.01" value="${bv('F','amt')}" placeholder="Totale € (IVA incl.)" required>
@@ -473,19 +489,19 @@ function vFatture(){
   <div id="fsum" style="flex:1 1 100%">${fsumHTML()}</div>
   <div class="chips">${[['in_debito','In debito'],['parziale','Pagata in parte'],['pagato','Pagata']].map(([k,l])=>`<button type="button" class="chip ${F.mode===k?'on':''}" data-a="mode" data-id="${k}">${l}</button>`).join('')}</div>
   ${F.mode==='parziale'?`<input data-b="F.part" type="number" step="0.01" min="0.01" value="${bv('F','part')}" placeholder="Quanto hai già pagato? €" required>`:''}
-  <button type="button" class="sm" data-a="pick" data-id="ff" style="flex:1">📎 Allega foto / file</button>
-  <input type="file" id="ff" accept="image/*" hidden data-fi="F">${FILE.F?`<span class="mut">📎 ${esc(FILE.F.name||'foto')}</span>`:''}
+  <button type="button" class="sm" data-a="pick" data-id="ff" style="flex:1"><i class="fa-solid fa-paperclip"></i> Allega foto / file</button>
+  <input type="file" id="ff" accept="image/*" hidden data-fi="F">${FILE.F?`<span class="mut"><i class="fa-solid fa-paperclip"></i> ${esc(FILE.F.name||'foto')}</span>`:''}
   ${xmlBlock()}
   ${auto?`<label class="warn" style="flex:1 1 100%"><input type="checkbox" data-ck="ok" ${F.ok?'checked':''} style="flex:none;width:18px;padding:0;margin-right:6px"><b>Ho controllato i dati con la fattura</b></label>`:''}
   <button class="btn">Salva fattura</button></form><p class="mut">Gli acconti già versati a questo fornitore si scalano da soli. La stessa fattura (fornitore + numero) non può essere registrata due volte.</p></div>`;
   const tot=S.fatture.reduce((a,f)=>a+f.amt,0),deb=S.fatture.reduce((a,f)=>a+f.amt-paid(f),0);
   h+=`<div class="card"><div class="tot"><span>Totale fatture</span><span>${eur(tot)}</span></div><div class="tot bad"><span>Ancora da pagare</span><span>${eur(deb)}</span></div></div>`;
-  h+=`<div class="card"><h2>💶 Acconto per la prossima fattura</h2><form data-f="acc"><input data-b="A.sup" list="sf" value="${bv('A','sup')}" placeholder="Fornitore" required><input data-b="A.amt" type="number" step="0.01" min="0.01" value="${bv('A','amt')}" placeholder="€" required style="flex:0 0 90px"><button class="btn">Registra acconto</button></form>`;
+  h+=`<div class="card"><h2><i class="fa-solid fa-euro-sign"></i> Acconto per la prossima fattura</h2><form data-f="acc"><input data-b="A.sup" list="sf" value="${bv('A','sup')}" placeholder="Fornitore" required><input data-b="A.amt" type="number" step="0.01" min="0.01" value="${bv('A','amt')}" placeholder="€" required style="flex:0 0 90px"><button class="btn">Registra acconto</button></form>`;
   const cr={};S.acconti.forEach(a=>cr[a.sup]=(cr[a.sup]||0)+a.amt);
   h+=Object.entries(cr).map(([s,v])=>`<p class="ok" style="margin:6px 0 0">Credito ${esc(s)}: ${eur(v)}</p>`).join('')+'</div>';
-  h+='<div class="card"><h2>🗂️ Archivio fatture</h2>';
+  h+='<div class="card"><h2><i class="fa-solid fa-folder-open"></i> Archivio fatture</h2>';
   h+=S.fatture.length?S.fatture.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(f=>{const s=st(f),[l,cl]=LB[s];
-    return `<div class="row" style="flex-wrap:wrap"><div><b style="text-transform:none">${esc(f.sup)} · n. ${esc(f.num)}</b><div class="mut">${fd(f.date)} · ${eur(f.amt)} · scad. ${fd(dueOf(f))}${s!=='in_debito'?` · pagato ${eur(paid(f))}`:''}${f.ph?` · <a href="#" data-a="ph" data-id="${f.id}">📎 documento</a>`:''}</div></div><span class="tag ${cl}">${l}</span>
+    return `<div class="row" style="flex-wrap:wrap"><div><b style="text-transform:none">${esc(f.sup)} · n. ${esc(f.num)}</b><div class="mut">${fd(f.date)} · ${eur(f.amt)} · scad. ${fd(dueOf(f))}${s!=='in_debito'?` · pagato ${eur(paid(f))}`:''}${f.ph?` · <a href="#" data-a="ph" data-id="${f.id}"><i class="fa-solid fa-paperclip"></i> documento</a>`:''}</div></div><span class="tag ${cl}">${l}</span>
     <div class="qd" style="flex:1 1 100%;justify-content:flex-end">${s!=='pagato'?`<span class="mut">resta ${eur(f.amt-paid(f))}</span><input type="number" step="0.01" min="0.01" placeholder="€" id="p${f.id}"><button class="sm" data-a="pay" data-id="${f.id}">Paga</button><button class="sm dk" data-a="full" data-id="${f.id}">Salda</button>`:''}<button class="sm" data-a="fdel" data-id="${f.id}" title="Elimina"><i class="fa-solid fa-trash"></i></button></div></div>`}).join(''):'<div class="empty">Nessuna fattura</div>';
   return h+'</div>'+vListino()+vImpost();
 }
@@ -503,6 +519,7 @@ function alerts(){
   S.units.forEach(u=>{const r=lastT(u.id);
     if(r&&!tOk(u,r.t))A.push({k:'temp',l:'bad',t:`${u.n}: ${r.t}°C fuori soglia (${hm(r.at)})${r.act?' · azione: '+r.act:''}`});
     if((!r||day(r.at)!==ld())&&new Date().getHours()>=10)A.push({k:'temp0',l:'warn',t:`${u.n}: temperatura di oggi da registrare`})});
+  if(S.role==='tit'&&(!S.bk||dleft(S.bk)<=-7))A.push({k:'bk',l:'warn',t:'Backup dei dati '+(S.bk?'non fatto da '+(-dleft(S.bk))+' giorni':'mai fatto')+': scaricane una copia (Scansione AI Fatture → Backup)'});
   return A;
 }
 function vAvvisi(kinds){
@@ -520,9 +537,9 @@ function vScad(){
   const sum=l=>eur(l.reduce((a,f)=>a+f.amt-paid(f),0));
   const g=(t,l,c)=>l.length?`<div class="card"><h2 class="${c}">${t} · ${sum(l)}</h2>${l.map(f=>{const d=dleft(dueOf(f));return `<div class="row"><div><b style="text-transform:none">${esc(f.sup)} · n. ${esc(f.num)}</b><div class="mut">scadenza ${fd(dueOf(f))} (${d<0?-d+' g di ritardo':d===0?'oggi':'tra '+d+' g'}) · resta ${eur(f.amt-paid(f))}</div></div><div class="qd"><button class="sm dk" data-a="full" data-id="${f.id}">Salda</button><button class="sm" data-a="ics" data-id="${f.id}" title="Aggiungi al calendario"><i class="fa-solid fa-calendar-plus"></i></button></div></div>`}).join('')}</div>`:'';
   const perm=('Notification' in window)?Notification.permission:'no';
-  return `<div class="card"><h2><i class="fa-solid fa-calendar-days"></i> Scadenziario pagamenti</h2><div class="tot bad"><span>Totale da pagare</span><span>${sum(op)}</span></div><div class="f" style="margin-top:8px"><button class="sm" data-a="ics" data-id="all" style="flex:1"><i class="fa-solid fa-calendar-plus"></i> Tutte nel calendario</button>${perm==='granted'?'<span class="mut" style="flex:1">🔔 Avvisi attivi quando apri l’app</span>':perm==='no'?'':'<button class="sm" data-a="notif" style="flex:1"><i class="fa-solid fa-bell"></i> Attiva avvisi</button>'}</div><p class="mut">Il calendario del telefono ricorda la scadenza 2 giorni prima. Gli avvisi dell’app compaiono solo quando la apri.</p></div>`
+  return `<div class="card"><h2><i class="fa-solid fa-calendar-days"></i> Scadenziario pagamenti</h2><div class="tot bad"><span>Totale da pagare</span><span>${sum(op)}</span></div><div class="f" style="margin-top:8px"><button class="sm" data-a="ics" data-id="all" style="flex:1"><i class="fa-solid fa-calendar-plus"></i> Tutte nel calendario</button>${perm==='granted'?'<span class="mut" style="flex:1"><i class="fa-solid fa-bell"></i> Avvisi attivi quando apri l’app</span>':perm==='no'?'':'<button class="sm" data-a="notif" style="flex:1"><i class="fa-solid fa-bell"></i> Attiva avvisi</button>'}</div><p class="mut">Il calendario del telefono ricorda la scadenza 2 giorni prima. Gli avvisi dell’app compaiono solo quando la apri.</p></div>`
   +g('Scadute',op.filter(f=>dleft(dueOf(f))<0),'bad')+g('Entro 7 giorni',op.filter(f=>{const d=dleft(dueOf(f));return d>=0&&d<=7}),'warn')+g('Più avanti',op.filter(f=>dleft(dueOf(f))>7),'')
-  +(op.length?'':'<div class="card"><div class="empty">Nessun pagamento in sospeso 🎉</div></div>');
+  +(op.length?'':'<div class="card"><div class="empty">Nessun pagamento in sospeso</div></div>');
 }
 
 // ---- incassi, costi, margine con IVA ----
@@ -536,7 +553,7 @@ function vIncassi(){
   const lbl=new Date(m+'-15T12:00:00').toLocaleDateString('it-IT',{month:'long',year:'numeric'}),td='style="padding:6px 4px;text-align:right"';
   const kpi=(t,v,c)=>`<div class="card" style="flex:1 1 140px;margin:0"><div class="mut">${t}</div><div class="text-xl font-bold ${c||''}">${v}</div></div>`;
   const R=(t,v,c,x)=>`<div class="tot ${c||''}" style="${x||''}"><span>${t}</span><span>${v}</span></div>`;
-  return vAvvisi(['scad','prezzo'])+`<div class="card"><div class="flex items-center justify-between"><button class="sm" data-a="mm" data-id="-1"><i class="fa-solid fa-chevron-left"></i></button><h2 style="margin:0;text-transform:capitalize">${lbl}</h2><button class="sm" data-a="mm" data-id="1"><i class="fa-solid fa-chevron-right"></i></button></div></div>
+  return vAvvisi(['scad','prezzo','bk'])+`<div class="card"><div class="flex items-center justify-between"><button class="sm" data-a="mm" data-id="-1"><i class="fa-solid fa-chevron-left"></i></button><h2 style="margin:0;text-transform:capitalize">${lbl}</h2><button class="sm" data-a="mm" data-id="1"><i class="fa-solid fa-chevron-right"></i></button></div></div>
   <div class="card"><h2><i class="fa-solid fa-cash-register"></i> Registra incasso giornaliero</h2><form data-f="inc" class="flex flex-wrap gap-2"><input type="date" data-b="I.date" value="${esc(M.I.date||ld())}" required style="flex:1 1 100%"><label class="mut" style="flex:1">Contanti €<input data-b="I.cash" type="number" step="0.01" min="0" value="${bv('I','cash')}" placeholder="0,00"></label><label class="mut" style="flex:1">POS €<input data-b="I.pos" type="number" step="0.01" min="0" value="${bv('I','pos')}" placeholder="0,00"></label><div class="flex justify-between w-full font-bold"><span>Totale giornata</span><span id="itot">${eur((+M.I.cash||0)+(+M.I.pos||0))}</span></div><button class="btn">Registra incasso</button></form></div>
   <div class="flex flex-wrap gap-2 mb-3">${kpi('Incassi (IVA incl.)',eur(tot))}${kpi('Margine operativo netto',eur(mol)+(pc!=null?` <span class="text-sm">(${pc.toFixed(0)}%)</span>`:''),mol>=0?'ok':'bad')}</div>
   <div class="card"><h2>Riepilogo incassi</h2>${rows.length?`<table class="w-full text-sm"><tr class="mut"><th style="text-align:left">Data</th><th ${td}>Contanti</th><th ${td}>POS</th><th ${td}>Totale</th><th></th></tr>${rows.map(r=>`<tr style="border-top:1px solid var(--bd)"><td style="padding:6px 0">${fd(r.date)}</td><td ${td}>${eur(r.cash)}</td><td ${td}>${eur(r.pos)}</td><td ${td}><b>${eur(r.cash+r.pos)}</b></td><td><button class="sm" data-a="idel" data-id="${r.id}">✕</button></td></tr>`).join('')}<tr style="border-top:2px solid var(--bd);font-weight:700"><td style="padding:6px 0">Totale</td><td ${td}>${eur(sc)}</td><td ${td}>${eur(sp)}</td><td ${td}>${eur(tot)}</td><td></td></tr></table><div class="mut mt-2">Media giornaliera: ${eur(tot/rows.length)} · ${rows.length} giorni</div>`:'<div class="empty">Nessun incasso in questo mese.</div>'}</div>
@@ -546,15 +563,6 @@ function vIncassi(){
 }
 
 // ---- temperature ----
-function vTemp(){
-  const f1=(u,r)=>r?`${r.t}°C · ${hm(r.at)} · ${esc(r.by)}`:'nessuna lettura';
-  let h=vAvvisi(['temp','temp0'])+`<div class="card"><h2><i class="fa-solid fa-temperature-half"></i> Registra temperatura</h2><form data-f="temp" class="flex flex-wrap gap-2"><select name="u" style="flex:1 1 100%">${S.units.map(u=>`<option value="${u.id}">${esc(u.n)} (${u.min!=null?u.min+' / ':''}max ${u.max}°C)</option>`).join('')}</select><input name="t" type="number" step="0.1" placeholder="Temperatura °C" required style="flex:1 1 120px"><input name="a" placeholder="Azione correttiva (obbligatoria se fuori soglia)" style="flex:1 1 100%"><button class="btn">Registra</button></form></div>`;
-  h+='<div class="card"><h2>Stato di oggi</h2>'+S.units.map(u=>{const r=lastT(u.id),td=r&&day(r.at)===ld();return `<div class="row"><div><b style="text-transform:none">${esc(u.n)}</b><div class="mut">${f1(u,r)}</div></div><span class="tag ${!td?'warn':tOk(u,r.t)?'ok':'bad'}">${!td?'da registrare':tOk(u,r.t)?'OK':'FUORI SOGLIA'}</span></div>`}).join('')+'</div>';
-  const hist=S.temps.slice(-25).reverse();
-  h+=`<div class="card"><h2>Ultime letture</h2>${hist.length?hist.map(r=>{const u=S.units.find(x=>x.id===r.u)||{n:'(rimosso)'};return `<div class="row"><div><b style="text-transform:none">${esc(u.n)}</b> <span class="${r.ok?'ok':'bad'}"><b>${r.t}°C</b></span><div class="mut">${dh(r.at)} · ${esc(r.by)}${r.act?' · azione: '+esc(r.act):''}</div></div></div>`}).join(''):'<div class="empty">Nessuna lettura</div>'}</div>`;
-  return h+`<div class="card"><h2>Frigoriferi e congelatori</h2>${S.units.map(u=>`<div class="row"><span>${esc(u.n)} <span class="mut">${u.min!=null?u.min+' / ':''}max ${u.max}°C</span></span><button class="sm" data-a="udel" data-id="${u.id}">✕</button></div>`).join('')}<form data-f="unit" class="flex flex-wrap gap-2" style="margin-top:8px"><input name="n" placeholder="Nome (es. Cella carni)" required style="flex:1 1 100%"><input name="max" type="number" step="0.1" placeholder="Max °C" required style="flex:1"><input name="min" type="number" step="0.1" placeholder="Min °C (facolt.)" style="flex:1"><button class="sm">Aggiungi</button></form><p class="mut">Soglie tipiche: frigorifero max +4 °C, congelatore max −18 °C. Verifica quelle del tuo piano HACCP.</p></div>`;
-}
-
 // ---- pulizie ----
 function vPul(){
   const td=S.clog.filter(e=>day(e.at)===ld()),n=S.ctasks.filter(t=>td.some(e=>e.t===t.id)).length;
@@ -572,13 +580,6 @@ function spreco(n,q,why,l){
   lg('spreco',`${n} ${q} ${it?it.u:''} · ${why} · ${eur(val)}`,l?l.id:'');
 }
 const wasteRate=()=>{const c=new Date(Date.now()-30*864e5).toLocaleDateString('sv-SE'),w=S.sprechi.filter(x=>x.d>=c).reduce((a,x)=>a+x.val,0),a=S.fatture.filter(f=>f.date>=c).reduce((s,f)=>s+impOf(f),0);return a>0?w/a:0};
-function vSpr(){
-  const m=ld().slice(0,7),mm=S.sprechi.filter(x=>x.d.startsWith(m)),tot=mm.reduce((a,x)=>a+x.val,0),by={};mm.forEach(x=>by[x.why]=(by[x.why]||0)+x.val);
-  return `<div class="card"><h2><i class="fa-solid fa-trash-can"></i> Registra spreco o scarto</h2><form data-f="spr" class="flex flex-wrap gap-2"><input name="n" list="spl" placeholder="Prodotto" required style="flex:1 1 100%"><datalist id="spl">${all().map(x=>`<option>${esc(x.n)}</option>`).join('')}</datalist><input name="q" type="number" step="0.01" min="0.01" placeholder="Quantità" required style="flex:1"><select name="w" style="flex:1 1 150px">${WHY.map(w=>`<option>${w}</option>`).join('')}</select><button class="btn">Registra spreco</button></form><p class="mut">La quantità viene tolta dal magazzino e valorizzata con l’ultimo prezzo di acquisto.</p></div>
-  <div class="card"><h2>Questo mese</h2><div class="tot bad"><span>Valore sprechi</span><span>${eur(tot)}</span></div>${Object.entries(by).map(([k,v])=>`<div class="tot mut" style="font-weight:400"><span>${esc(k)}</span><span>${eur(v)}</span></div>`).join('')}<p class="mut">Incidenza sugli acquisti (30 gg): <b>${(wasteRate()*100).toFixed(1)}%</b>. Entra nel food cost reale delle ricette.</p></div>
-  <div class="card"><h2>Ultimi sprechi</h2>${S.sprechi.slice(-15).reverse().map(x=>`<div class="row"><div><b>${esc(x.n)}</b> <span class="mut">${x.q} ${esc(x.u)}</span><div class="mut">${dh(x.at)} · ${esc(x.by)} · ${esc(x.why)}</div></div><b class="bad">${eur(x.val)}</b></div>`).join('')||'<div class="empty">Nessuno spreco registrato</div>'}</div>`;
-}
-
 // ---- etichette lotto (codice a barre) ----
 const bcOf=l=>{if(!l.bc){l.bc='CC'+l.id.slice(0,6).toUpperCase();save()}return l.bc};
 const lotByCode=c=>S.lotti.find(l=>l.bc===c||l.lot===c||l.id===c);
@@ -635,17 +636,127 @@ function vExp(){
 }
 
 // ---- navigazione ----
-const CS=[['chk','Check-in'],['spe','Spesa'],['lot','Lotti'],['tmp','Temperature'],['pul','Pulizie'],['spr','Sprechi'],['bac','Bacheca'],['all','Allergeni'],['reg','Registro HACCP']];
 const TS=[['inc','Incassi & bilancio'],['scad','Scadenze'],['ric','Ricette & food cost'],['con','Consumi & previsioni'],['exp','Esporta']];
-const vTit=()=>chips('tit',TS)+({inc:vIncassi,scad:()=>vAvvisi(['prezzo'])+vScad(),ric:vRicette,con:vConsumi,exp:vExp})[P.sub.tit]();
-const vCuc=()=>chips('cuc',CS)+({chk:()=>vAvvisi(['temp','temp0'])+vCheckin(),spe:()=>vSpesa()+vNote(),lot:vLotti,tmp:vTemp,pul:vPul,spr:vSpr,bac:vBac,all:vAllerg,reg:vReg})[P.sub.cuc]();
+const vTit=()=>chips('tit',TS)+helpLine(P.sub.tit)+({inc:vIncassi,scad:()=>vAvvisi(['prezzo'])+vScad(),ric:vRicette,con:vConsumi,exp:vExp})[P.sub.tit]();
+// ===== SEMPLICITÀ: schermata Oggi, tour, aiuto, tocco al posto della scrittura =====
+const loadScr=u=>new Promise((ok,ko)=>{const s=document.createElement('script');s.src=u;s.onload=ok;s.onerror=ko;document.head.appendChild(s)});
+let ZR=null;
+P.sub.cuc='oggi';P.t={u:null,v:null,act:'',other:false};P.w={q:'',cat:'',sel:null,n:1,why:'Scaduto'};P.tr=null;
+const LOGO='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#1E3A5F"/><g transform="translate(0,25)"><circle cx="180" cy="200" r="58" fill="#fff"/><circle cx="256" cy="168" r="70" fill="#fff"/><circle cx="332" cy="200" r="58" fill="#fff"/><rect x="150" y="258" width="212" height="10" fill="#1E3A5F"/><rect x="176" y="268" width="160" height="96" rx="14" fill="#fff"/><path d="M214 316 L244 344 L298 288" fill="none" stroke="#F26B21" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
+const f1=n=>String(n).replace('.',',');
+const greet=()=>{const h=new Date().getHours();return h<12?'Buongiorno':h<18?'Buon pomeriggio':'Buonasera'};
+const whoForm=()=>`<h2 class="text-xl font-bold mb-1"><i class="fa-solid fa-user"></i> Chi sei?</h2><p class="mut mb-2">Tocca il tuo nome: resterà accanto a ogni controllo (HACCP).</p><div class="flex flex-col gap-2">${S.staff.map(n=>`<button class="btn ${n===S.who?'':'alt'}" style="${n===S.who?'background:var(--ok)':''}" data-a="pw" data-id="${esc(n)}">${esc(n)}</button>`).join('')}</div><form data-f="who" class="flex gap-2 mt-3"><input name="w" placeholder="${S.staff.length?'Non sei in lista? Scrivi il tuo nome':'Scrivi il tuo nome (solo la prima volta)'}" maxlength="40" required><button class="sm">Aggiungi</button></form>`;
+function afterWho(){if(!S.tour&&P.tr!=null)modal(tourModal(Math.min(P.tr+1,TOUR.length-1)))}
+
+function oggiStatus(){
+  if(S.chk.d!==ld())S.chk={d:ld(),ids:[]};
+  const act=S.lotti.filter(l=>l.rem>0),cd=act.filter(l=>S.chk.ids.includes(l.id)).length;
+  const tm=S.units.filter(u=>{const r=lastT(u.id);return !r||day(r.at)!==ld()}).length,tb=S.units.filter(u=>{const r=lastT(u.id);return r&&!tOk(u,r.t)}).length;
+  const pd=S.ctasks.filter(t=>S.clog.some(e=>e.t===t.id&&day(e.at)===ld())).length;
+  const pend=(act.length-cd>0?1:0)+(tm>0||tb>0?1:0)+(S.ctasks.length-pd>0?1:0);
+  const tot=act.length+S.units.length+S.ctasks.length,done=cd+(S.units.length-tm)+pd;
+  return{act:act.length,cd,tm,tb,pt:S.ctasks.length,pd,pend,pct:tot?Math.round(done/tot*100):0,any:tot>0};
+}
+function vOggi(){
+  const st=oggiStatus(),nm=(S.who||'').split(' ')[0],need=st.act-st.cd,open=S.spesa.filter(i=>!i.done).length,sp=S.sprechi.filter(x=>x.d===ld()).length;
+  const done=st.any&&st.pend===0;
+  const tile=(k,ic,t,s,c)=>`<button class="tile ${c}" data-a="sub" data-c="cuc" data-id="${k}"><i class="fa-solid ${ic} ic"></i><b>${t}</b><span>${s}</span></button>`;
+  const ck=!st.act?['','Aggiungi i prodotti']:need>0?['todo',need+' da verificare']:['ok','Tutto verificato'];
+  const tp=!S.units.length?['','Aggiungi un frigo']:st.tb>0?['bad',st.tb+' fuori soglia']:st.tm>0?['todo',st.tm+' da registrare']:['ok','Registrate'];
+  const pu=!st.pt?['','Nessuna attività']:st.pt-st.pd>0?['todo',(st.pt-st.pd)+' da fare']:['ok','Tutte fatte'];
+  return (S.role==='tit'?vAvvisi(['bk','scad']):'')+`<div class="card"><div class="flex items-center gap-3"><i class="fa-solid ${done?'fa-circle-check ok':'fa-sun todo'}" style="font-size:34px"></i><div><div style="font-size:21px;font-weight:800">${greet()}${nm?', '+esc(nm):''}!</div><div class="mut" style="font-size:15px">${done?'Tutto pronto: grande lavoro, la cucina è pronta per il servizio.':!st.any?'Aggiungi prodotti, frigoriferi e attività per iniziare.':st.pend===1?'Hai 1 cosa da fare prima del servizio.':'Hai '+st.pend+' cose da fare prima del servizio.'}</div></div></div><div class="pbar" style="margin-top:12px"><div style="width:${st.pct}%"></div></div><div class="mut" style="margin-top:4px">${st.pct}% della giornata completato</div>${S.who?'':'<button class="btn" data-a="who" style="margin-top:10px">Scegli il tuo nome</button>'}</div>`
+  +`<div class="tiles">${tile('chk','fa-clipboard-check','Check-in',ck[1],ck[0])}${tile('tmp','fa-temperature-half','Temperature',tp[1],tp[0])}${tile('pul','fa-broom','Pulizie',pu[1],pu[0])}${tile('spe','fa-cart-shopping','Aggiungi alla spesa',open+' in lista','')}${tile('spr','fa-trash-can','Spreco',sp?sp+' registrati oggi':'Registra scarti','')}<button class="tile wide" data-a="sub" data-c="cuc" data-id="altro"><i class="fa-solid fa-ellipsis ic"></i><b>Altro</b><span>Lotti, bacheca, allergeni, registro</span></button></div>`
+  +`<button class="sm" data-a="rep" style="width:100%"><i class="fa-brands fa-whatsapp"></i> Invia riepilogo al titolare</button>`;
+}
+function vAltro(){
+  const t=(id,ic,tx,s)=>`<button class="tile" data-a="${id==='sheet'||id==='guide'?id:'sub'}" data-c="cuc" data-id="${id}"><i class="fa-solid ${ic} ic"></i><b>${tx}</b><span>${s}</span></button>`;
+  return `<div class="tiles">${t('lot','fa-barcode','Lotti ed etichette','Arrivi, scarichi, stampa')}${t('bac','fa-comments','Bacheca','Messaggi chef e titolare')}${t('all','fa-wheat-awn','Allergeni','Registro dei piatti')}${t('reg','fa-clipboard-list','Registro HACCP','Chi ha fatto cosa')}${t('sheet','fa-print','Foglio da stampare','Con il codice per aprire l’app')}${t('guide','fa-circle-question','Guida','Come si usa Chef Control')}</div>`;
+}
+const SECT={chk:['Check-in','fa-clipboard-check'],tmp:['Temperature','fa-temperature-half'],pul:['Pulizie','fa-broom'],spe:['Lista spesa','fa-cart-shopping'],spr:['Spreco','fa-trash-can'],lot:['Lotti ed etichette','fa-barcode'],bac:['Bacheca','fa-comments'],all:['Allergeni','fa-wheat-awn'],reg:['Registro HACCP','fa-clipboard-list'],altro:['Altro','fa-ellipsis']};
+const backBar=k=>`<div class="flex items-center gap-2 mb-3"><button class="sm" data-a="sub" data-c="cuc" data-id="${k==='altro'?'oggi':(['lot','bac','all','reg'].includes(k)?'altro':'oggi')}"><i class="fa-solid fa-arrow-left"></i> ${['lot','bac','all','reg'].includes(k)?'Altro':'Oggi'}</button><h2 style="margin:0;flex:1"><i class="fa-solid ${SECT[k][1]}"></i> ${SECT[k][0]}</h2>${k==='altro'?'':`<button class="sm" data-a="help" data-id="${k}">Come si usa?</button>`}</div>`;
+const helpLine=k=>HELP[k]?`<div style="text-align:right;margin:-4px 0 8px"><button class="sm" data-a="help" data-id="${k}"><i class="fa-solid fa-circle-question"></i> Come si usa?</button></div>`:'';
+const helpBar=(k,t)=>`<div class="flex items-center gap-2 mb-3"><h2 style="margin:0;flex:1">${t}</h2><button class="sm" data-a="help" data-id="${k}">Come si usa?</button></div>`;
+const vCuc=()=>{const s=P.sub.cuc;if(s==='oggi')return vOggi();if(s==='altro')return backBar('altro')+vAltro();
+  return backBar(s)+({chk:()=>vAvvisi(['temp','temp0'])+vCheckin(),spe:()=>vSpesa()+vNote(),lot:vLotti,tmp:vTemp,pul:vPul,spr:vSpr,bac:vBac,all:vAllerg,reg:vReg})[s]()};
+
+const HELP={
+ oggi:['Qui trovi le cose da fare oggi: tocca un pulsante per aprirla.','Verde = fatto, arancio = da fare, rosso = problema.','A fine servizio premi “Invia riepilogo” per avvisare il titolare.'],
+ chk:['Controlla la quantità di ogni prodotto: se è diversa, correggila.','Tocca il cerchio quando è a posto, oppure “Segna tutto verificato”.','Manca un prodotto? Premi “+ Prodotto”.'],
+ tmp:['Scegli il frigorifero o il congelatore.','Tocca la temperatura letta (o usa − e +).','Se è fuori soglia scegli cosa hai fatto, poi premi “Registra”.'],
+ pul:['Tocca “Fatto” quando hai finito una pulizia.','Restano registrati il tuo nome e l’ora.'],
+ spe:['Cerca o tocca il prodotto che manca.','Scegli la quantità con + e −, poi “Aggiungi in lista”.','Chi fa la spesa tocca il cerchio quando ha preso.'],
+ spr:['Tocca il prodotto buttato (o cercalo).','Scegli quantità e motivo.','Premi “Registra spreco”: esce dal magazzino.'],
+ lot:['Arrivo merce: scansiona o fotografa l’etichetta, poi controlla lotto e scadenza.','“Scansiona etichetta” apre un lotto già in magazzino.','Con l’icona etichetta stampi il codice a barre del lotto.'],
+ bac:['Scrivi un messaggio e premi “Pubblica”.','Per farlo arrivare a un collega usa “Invia su WhatsApp”.'],
+ all:['La tabella mostra gli allergeni di ogni piatto (numeri UE 1-14).','Premi “Stampa” per averla in sala.'],
+ reg:['Qui c’è chi ha fatto cosa e quando.','Cerca un lotto per vederne la storia.','Scarica il CSV per i controlli.'],
+ inc:['Ogni sera scrivi contanti e POS e premi “Registra incasso”.','Il margine del mese si aggiorna da solo.','Aggiungi gli altri costi (affitto, personale…).'],
+ scad:['Qui vedi i pagamenti in arrivo e quelli scaduti.','“Salda” segna la fattura pagata.','Il calendario del telefono ti ricorda la scadenza.'],
+ ric:['Crea un piatto con prezzo e ingredienti.','L’app calcola costo, food cost e prezzo consigliato.','Se manca un prezzo, carica una fattura con quel prodotto.'],
+ con:['Scegli un prodotto per vedere i consumi.','Il fabbisogno a 7 giorni dice cosa ordinare.'],
+ exp:['Scegli il mese.','Scarica Excel o CSV e mandalo al commercialista.'],
+ fat:['Carica foto, PDF o XML della fattura.','Controlla le caselle gialle con la fattura e spunta “Ho controllato”.','Premi “Salva fattura”.']
+};
+const helpModal=k=>`<h2 class="text-xl font-bold mb-2"><i class="fa-solid fa-circle-question"></i> Come si usa?</h2>${(HELP[k]||[]).map((t,i)=>`<div class="flex gap-3 items-start" style="margin:10px 0"><span style="flex:none;width:30px;height:30px;border-radius:99px;background:var(--pri);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800">${i+1}</span><div style="font-size:16px">${t}</div></div>`).join('')}<button class="btn" data-a="closemd" style="margin-top:10px">Ho capito</button>`;
+const TOUR=[['fa-kitchen-set','Benvenuto in Chef Control','L’app della cucina: poche azioni al giorno, tutto con un tocco.'],['fa-list-check','Parti da “Oggi”','Ogni giorno trovi 5 pulsanti. Verde = fatto, arancio = da fare, rosso = problema.'],['fa-user','Scegli il tuo nome','Così ogni controllo resta firmato con nome e ora, come richiede l’HACCP.'],['fa-circle-question','Un aiuto sempre vicino','In ogni sezione c’è “Come si usa?”. Dal menu del browser aggiungi l’app alla schermata Home.']];
+const tourModal=i=>{const t=TOUR[i];return `<div class="text-center"><i class="fa-solid ${t[0]}" style="font-size:46px;color:var(--pri)"></i><h2 class="text-xl font-bold mt-2">${t[1]}</h2><p class="mut" style="font-size:16px;margin:8px 0 14px">${t[2]}</p><div class="flex justify-center gap-2 mb-3">${TOUR.map((_,k)=>`<span style="width:10px;height:10px;border-radius:99px;background:${k===i?'var(--pri)':'var(--bd)'}"></span>`).join('')}</div>${i===2?'<button class="btn alt" data-a="who" style="margin-bottom:8px">Scegli il tuo nome</button>':''}<div class="flex gap-2"><button class="sm" data-a="tourend" style="flex:1">Salta</button><button class="btn" style="flex:2" data-a="${i<TOUR.length-1?'tour':'tourend'}" data-id="${i+1}">${i<TOUR.length-1?'Avanti':'Inizia'}</button></div></div>`};
+
+// ---- temperature a tocco ----
+const ACTS=['Spostato i prodotti','Chiamato il tecnico','Porta lasciata aperta','In sbrinamento','Altro'];
+function vUnits(){return `<div class="card"><h2>Frigoriferi e congelatori</h2>${S.units.map(u=>`<div class="row"><span>${esc(u.n)} <span class="mut">${u.min!=null?u.min+' / ':''}max ${u.max}°C</span></span><button class="sm" data-a="udel" data-id="${u.id}">✕</button></div>`).join('')}<form data-f="unit" class="flex flex-wrap gap-2" style="margin-top:8px"><input name="n" placeholder="Nome (es. Cella carni)" required style="flex:1 1 100%"><input name="max" type="number" step="0.1" placeholder="Max °C" required style="flex:1"><input name="min" type="number" step="0.1" placeholder="Min °C (facolt.)" style="flex:1"><button class="sm">Aggiungi</button></form><p class="mut">Soglie tipiche: frigorifero max +4 °C, congelatore max −18 °C. Verifica quelle del tuo piano HACCP.</p></div>`}
+function vTemp(){
+  const U=S.units,u=U.find(x=>x.id===P.t.u)||U[0];let h=vAvvisi(['temp','temp0']);
+  if(!u)return h+'<div class="card"><div class="empty">Nessun frigorifero o congelatore: il titolare può aggiungerlo.</div></div>'+(S.role==='tit'?vUnits():'');
+  if(P.t.u!==u.id){P.t.u=u.id;P.t.v=null}
+  const v=P.t.v,ok=v==null?null:tOk(u,v),pre=[u.max-3,u.max-2,u.max-1,u.max,u.max+2];
+  h+=`<div class="card"><h2>Quale apparecchio?</h2><div class="chips" style="flex-wrap:wrap">${U.map(x=>{const r=lastT(x.id),td=r&&day(r.at)===ld();return `<button class="chip ${x.id===u.id?'on':''}" data-a="tu" data-id="${x.id}">${esc(x.n)}${td?' ✓':''}</button>`}).join('')}</div></div>
+  <div class="card"><h2>Temperatura letta</h2><div class="text-center" style="font-size:46px;font-weight:800;margin:6px 0"><span class="${ok==null?'mut':ok?'ok':'bad'}">${v==null?'— °C':f1(v)+' °C'}</span></div><div class="mut text-center">${esc(u.n)}: ${u.min!=null?u.min+' / ':''}max ${f1(u.max)} °C</div>
+  <div class="flex gap-2 mt-3"><button class="btn alt" data-a="ts" data-id="-0.5" style="flex:1">− 0,5</button><button class="btn alt" data-a="ts" data-id="0.5" style="flex:1">+ 0,5</button></div>
+  <div class="chips" style="flex-wrap:wrap;margin-top:10px">${pre.map(p=>`<button class="chip ${v===p?'on':''}" data-a="tp" data-id="${p}">${f1(p)}°</button>`).join('')}</div>`;
+  if(ok===false)h+=`<p class="bad" style="margin-top:10px"><b>Fuori soglia!</b> Cosa hai fatto?</p><div class="chips" style="flex-wrap:wrap">${ACTS.map(a=>`<button class="chip ${P.t.act===a?'on':''}" data-a="tact" data-id="${a}">${a}</button>`).join('')}</div>${P.t.other?'<input id="tx" placeholder="Scrivi cosa hai fatto" style="margin-top:8px;width:100%">':''}`;
+  h+=`<button class="btn" data-a="tsave" style="margin-top:12px" ${v==null?'disabled':''}>Registra temperatura</button></div>`;
+  h+='<div class="card"><h2>Stato di oggi</h2>'+U.map(x=>{const r=lastT(x.id),td=r&&day(r.at)===ld();return `<div class="row"><div><b style="text-transform:none">${esc(x.n)}</b><div class="mut">${r?`${f1(r.t)}°C · ${hm(r.at)} · ${esc(r.by)}`:'nessuna lettura'}</div></div><span class="tag ${!td?'warn':tOk(x,r.t)?'ok':'bad'}">${!td?'da registrare':tOk(x,r.t)?'OK':'FUORI SOGLIA'}</span></div>`}).join('')+'</div>';
+  const hist=S.temps.slice(-15).reverse();
+  h+=`<div class="card"><h2>Ultime letture</h2>${hist.length?hist.map(r=>{const x=S.units.find(y=>y.id===r.u)||{n:'(rimosso)'};return `<div class="row"><div><b style="text-transform:none">${esc(x.n)}</b> <span class="${r.ok?'ok':'bad'}"><b>${f1(r.t)}°C</b></span><div class="mut">${dh(r.at)} · ${esc(r.by)}${r.act?' · '+esc(r.act):''}</div></div></div>`}).join(''):'<div class="empty">Nessuna lettura: la prima è quella di oggi.</div>'}</div>`;
+  return h+(S.role==='tit'?vUnits():'');
+}
+// ---- spreco a tocco ----
+function vSpr(){
+  const it=P.w.sel&&find(P.w.sel),m=ld().slice(0,7),mm=S.sprechi.filter(x=>x.d.startsWith(m)),tot=mm.reduce((a,x)=>a+x.val,0),by={};mm.forEach(x=>by[x.why]=(by[x.why]||0)+x.val);
+  const rec=[...new Set(S.sprechi.slice().reverse().map(x=>x.n))].slice(0,6);
+  let h=`<div class="card"><h2>Cosa hai buttato?</h2>${rec.length&&!it?`<div class="chips" style="flex-wrap:wrap;margin-bottom:8px">${rec.map(n=>`<button class="chip" data-a="wsel" data-id="${esc(n)}">${esc(n)}</button>`).join('')}</div>`:''}${it?`<p style="font-size:18px;margin:0"><b style="text-transform:capitalize">${esc(it.n)}</b> <button class="sm" data-a="wsel" data-id="">cambia</button></p>`:`<div class="f">${picker('w')}</div>`}</div>`;
+  if(it){const step=it.u==='pz'?1:.5;
+    h+=`<div class="card"><h2>Quanto?</h2><div class="flex items-center gap-3"><button class="btn alt" data-a="wq" data-id="-${step}" style="flex:1">−</button><b style="font-size:26px;flex:1.2;text-align:center">${f1(P.w.n)} ${esc(it.u)}</b><button class="btn alt" data-a="wq" data-id="${step}" style="flex:1">+</button></div><div class="mut text-center" style="margin-top:6px">Valore: ${eur(P.w.n*pr(it.n))}</div></div><div class="card"><h2>Perché?</h2><div class="chips" style="flex-wrap:wrap">${WHY.map(w=>`<button class="chip ${P.w.why===w?'on':''}" data-a="wwhy" data-id="${w}">${w}</button>`).join('')}</div><button class="btn" data-a="wsave" style="margin-top:12px">Registra spreco</button></div>`}
+  return h+`<div class="card"><h2>Questo mese</h2><div class="tot bad"><span>Valore sprechi</span><span>${eur(tot)}</span></div>${Object.entries(by).map(([k,v])=>`<div class="tot mut" style="font-weight:400"><span>${esc(k)}</span><span>${eur(v)}</span></div>`).join('')}<p class="mut">Incidenza sugli acquisti (30 gg): <b>${(wasteRate()*100).toFixed(1)}%</b>. Entra nel food cost reale delle ricette.</p></div>
+  <div class="card"><h2>Ultimi sprechi</h2>${S.sprechi.slice(-12).reverse().map(x=>`<div class="row"><div><b>${esc(x.n)}</b> <span class="mut">${x.q} ${esc(x.u)}</span><div class="mut">${dh(x.at)} · ${esc(x.by)} · ${esc(x.why)}</div></div><b class="bad">${eur(x.val)}</b></div>`).join('')||'<div class="empty">Nessuno spreco registrato: ottimo!</div>'}</div>`;
+}
+
+// ---- foglio da stampare, riepilogo, scanner compatibile iPhone ----
+async function qrSvg(t){try{if(!window.qrcode)await loadScr('https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js');const q=qrcode(0,'M');q.addData(t);q.make();const n=q.getModuleCount();let r='';for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(q.isDark(y,x))r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return `<svg viewBox="-2 -2 ${n+4} ${n+4}" width="170" height="170" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${n+4}" height="${n+4}" fill="#fff"/>${r}</svg>`}catch(e){return ''}}
+async function sheet(){
+  const url=location.href.split('#')[0].replace(/index\.html$/,''),q=await qrSvg(url);
+  const lp=document.getElementById('lblprint');
+  lp.innerHTML=`<div class="sheet"><div style="display:flex;align-items:center;gap:14px"><div style="width:64px">${LOGO}</div><div><div style="font-size:28px;font-weight:800"><span style="color:#D9570F">Chef</span> <span style="color:#1E3A5F">Control</span></div><div>La checklist digitale della cucina</div></div></div><hr style="margin:12px 0">
+  <div style="display:flex;gap:18px;align-items:center"><div>${q||''}</div><div><b style="font-size:18px">Come aprire l’app</b><ol style="margin:6px 0 0 18px"><li>Inquadra il codice con la fotocamera del telefono.</li><li>Apri il link e scegli “Aggiungi a schermata Home”.</li><li>Tocca l’icona Chef Control.</li></ol><div style="margin-top:6px;font-size:12px;word-break:break-all">${esc(url)}</div></div></div><hr style="margin:12px 0">
+  <b style="font-size:18px">Ogni giorno, prima del servizio</b><ol style="margin:6px 0 0 18px;font-size:16px;line-height:1.7"><li><b>Scegli il tuo nome</b> (in alto o nella schermata Oggi).</li><li><b>Check-in</b>: controlla le quantità e tocca il cerchio.</li><li><b>Temperature</b>: scegli il frigo, tocca la temperatura, registra.</li><li><b>Pulizie</b>: tocca “Fatto” quando hai finito.</li><li>Manca qualcosa? <b>Aggiungi alla spesa</b>. Hai buttato qualcosa? <b>Spreco</b>.</li><li>A fine servizio: <b>Invia riepilogo</b> al titolare.</li></ol><hr style="margin:12px 0">
+  <b>I colori:</b> <span style="color:#2E9E6B"><b>verde</b> = fatto</span> · <span style="color:#D9570F"><b>arancio</b> = da fare</span> · <span style="color:#D64545"><b>rosso</b> = problema, avvisa il titolare</span><p style="margin-top:14px">In caso di dubbi tocca “Come si usa?” in ogni sezione. Titolare: ______________ Tel. ______________</p></div>`;
+  document.body.classList.add('pl');window.print();
+}
+function riepilogo(){
+  const st=oggiStatus(),L=['Chef Control · riepilogo '+fd(ld())+(S.who?' · '+S.who:''),'Check-in: '+st.cd+'/'+st.act+' verificati','Temperature: '+(S.units.length-st.tm)+'/'+S.units.length+' registrate'+(st.tb?' · '+st.tb+' FUORI SOGLIA':''),'Pulizie: '+st.pd+'/'+st.pt+' fatte'];
+  const w=S.sprechi.filter(x=>x.d===ld());if(w.length)L.push('Sprechi: '+w.map(x=>x.n+' '+x.q+' '+x.u).join(', '));
+  const o=S.spesa.filter(i=>!i.done);if(o.length)L.push('Da comprare: '+o.map(i=>i.name+' '+i.qty+' '+i.unit).join(', '));
+  window.open('https://wa.me/?text='+encodeURIComponent(L.join('\n')),'_blank');
+}
+
 function render(){
   const tit=S.role==='tit',A=alerts(),nt=A.filter(a=>a.k==='scad'||a.k==='prezzo').length,nc=A.filter(a=>a.k==='temp').length;
   const tabs=[['tit','Titolare & Incassi','fa-chart-line',1,nt],['cuc','Check-in & Magazzino','fa-clipboard-check',0,nc],['fat','Scansione AI Fatture','fa-file-invoice-dollar',1,0]].filter(t=>tit||!t[3]);
   if(!tabs.some(t=>t[0]===S.tab))S.tab='cuc';
   document.getElementById('role').innerHTML=(DIP?'<button class="sm" data-a="inst" title="Installa"><i class="fa-solid fa-download"></i></button>':'')+`<button class="sm" data-a="who" title="Chi sei?"><i class="fa-solid fa-user"></i> ${esc(S.who||'Chi sei?')}</button><button class="sm" data-a="guide" title="Guida"><i class="fa-solid fa-circle-question"></i></button>`+(tit?'<button class="sm" data-a="lock"><i class="fa-solid fa-lock-open"></i> Blocca</button>':'<button class="sm" data-a="unlock"><i class="fa-solid fa-lock"></i> Area titolare</button>');
   document.getElementById('nav').innerHTML=tabs.map(([k,l,i,,n])=>`<button class="${S.tab===k?'on':''}" data-a="tab" data-id="${k}"><i class="fa-solid ${i}" style="display:block;font-size:18px;margin-bottom:2px"></i>${l}${n?` <span style="background:var(--bad);color:#fff;border-radius:99px;padding:0 6px;font-size:11px">${n}</span>`:''}</button>`).join('');
-  document.getElementById('v').innerHTML=({tit:vTit,cuc:vCuc,fat:vFatture})[S.tab]();
+  document.getElementById('nav').style.display=tabs.length>1?'flex':'none';
+  document.getElementById('v').innerHTML=({tit:vTit,cuc:vCuc,fat:()=>helpBar('fat','Scansione fatture')+vFatture()})[S.tab]();
 }
 window.onafterprint=()=>document.body.classList.remove('pl');
 setTimeout(notifyDue,2500);setInterval(notifyDue,18e5);
@@ -655,19 +766,24 @@ async function scan(){
   const ov=document.getElementById('ov');ov.style.display='flex';
   ov.innerHTML='<button class="sm" data-a="close">✕ Chiudi</button><video id="vd" playsinline muted style="width:100%;border-radius:12px"></video><p id="sm" style="color:#fff;margin:0"></p><form data-f="manual" style="width:100%"><input name="c" placeholder="Codice a mano"><button class="sm">OK</button></form>';
   const sm=document.getElementById('sm'),vd=document.getElementById('vd');
-  if(!('BarcodeDetector' in window)){sm.textContent='Scanner non supportato da questo browser: scrivi il codice a mano o usa la foto.';return}
+  if(!('BarcodeDetector' in window)){
+    try{sm.textContent='Avvio il lettore…';if(!window.ZXing)await loadScr('https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js');
+      const rd=new ZXing.BrowserMultiFormatReader();ZR=rd;sm.textContent='Inquadra il codice';
+      rd.decodeFromVideoDevice(null,vd,r=>{if(r){try{rd.reset()}catch(x){}ZR=null;gotCode(r.getText())}});
+    }catch(e){sm.textContent='Lettore non disponibile (serve internet): scrivi il codice a mano.'}
+    return}
   try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});vd.srcObject=stream;await vd.play();
     const det=new BarcodeDetector();(async function t(){if(!stream)return;const r=await det.detect(vd).catch(()=>[]);if(r.length){gotCode(r[0].rawValue);return}requestAnimationFrame(t)})();
   }catch(e){sm.textContent='Fotocamera non disponibile: controlla i permessi o scrivi il codice a mano.'}
 }
-function closeOv(){if(stream)stream.getTracks().forEach(t=>t.stop());stream=null;const o=document.getElementById('ov');o.style.display='none';o.innerHTML=''}
+function closeOv(){if(ZR){try{ZR.reset()}catch(x){}ZR=null}if(stream)stream.getTracks().forEach(t=>t.stop());stream=null;const o=document.getElementById('ov');o.style.display='none';o.innerHTML=''}
 function gotCode(c){closeOv();if(P.sm==='cerca'){const l=lotByCode(c);if(l)modal(lotModal(l));else toast('Etichetta non riconosciuta: '+c);return}M.L.code=c;const n=S.barcodes[c];if(n&&find(n)){P.l.sel=n;toast('Riconosciuto: '+n)}else toast('Codice nuovo: scegli l’articolo, lo ricorderò.');render()}
 
 document.addEventListener('click',async e=>{
   if(e.target.id==='md'){closeMd();return}
   const b=e.target.closest('[data-a]');if(!b)return;
   const a=b.dataset.a,id=b.dataset.id,c=b.dataset.c;
-  if(['cv','sc','ex','msc','mex','mspr','clok'].includes(a)&&needWho())return;
+  if(['cv','cvall','sc','ex','msc','mex','mspr','clok','tsave','wsave'].includes(a)&&needWho())return;
   if(a==='ph'){e.preventDefault();const f=await phGet(id);if(!f){toast('Foto non trovata');return}const o=document.getElementById('ov');o.style.display='flex';o.innerHTML='<button class="sm" data-a="close">✕ Chiudi</button>';const im=new Image();im.src=URL.createObjectURL(f);o.appendChild(im);return}
   if(a==='close'){closeOv();return}
   if(a==='scan'){P.sm=id||'arrivo';scan();return}
@@ -694,6 +810,23 @@ document.addEventListener('click',async e=>{
   else if(a==='alt'){const n=P.a.sel,o=Object.assign({},alOf(n)),cu=o[id];if(!cu)o[id]='c';else if(cu==='c')o[id]='t';else delete o[id];S.al[n]=o}
   else if(a==='print'){window.print();return}
   else if(a==='who')modal(whoForm());
+  else if(a==='pw'){S.who=id;lg('accesso','Operatore: '+id);closeMd();afterWho()}
+  else if(a==='sdel'){e.preventDefault();S.staff=S.staff.filter(x=>x!==id);if(S.who===id)S.who=''}
+  else if(a==='tour'){P.tr=+id;modal(tourModal(+id))}
+  else if(a==='tourend'){S.tour=1;P.tr=null;closeMd()}
+  else if(a==='help')modal(helpModal(id));
+  else if(a==='tu'){P.t.u=id;P.t.v=null;P.t.act='';P.t.other=false}
+  else if(a==='tp')P.t.v=parseFloat(id);
+  else if(a==='ts'){const u=S.units.find(x=>x.id===P.t.u),base=P.t.v!=null?P.t.v:(lastT(P.t.u)?lastT(P.t.u).t:(u?u.max:4));P.t.v=Math.round((base+parseFloat(id))*10)/10}
+  else if(a==='tact'){P.t.act=id;P.t.other=id==='Altro'}
+  else if(a==='tsave'){const u=S.units.find(x=>x.id===P.t.u),t=P.t.v;if(!u||t==null)return;const ok=tOk(u,t),act=P.t.other?((document.getElementById('tx')||{}).value||'').trim():P.t.act;if(!ok&&!act){toast('Scegli cosa hai fatto');return}S.temps.push({id:uid(),u:u.id,t,at:new Date().toISOString(),by:S.who,ok,act:ok?'':act});lg('temperatura',u.n+': '+t+'°C'+(ok?'':' FUORI SOGLIA · '+act));toast(ok?'Temperatura registrata ✓':'Registrata fuori soglia: avvisa il titolare');P.t.v=null;P.t.act='';P.t.other=false}
+  else if(a==='wsel'){P.w.sel=id||null;P.w.n=1}
+  else if(a==='wq'){const d=parseFloat(id);P.w.n=Math.max(Math.abs(d),Math.round((P.w.n+d)*10)/10)}
+  else if(a==='wwhy')P.w.why=id;
+  else if(a==='wsave'){const n=P.w.sel;if(!n)return;spreco(n,P.w.n,P.w.why,null);toast('Spreco registrato: '+eur(P.w.n*pr(n)));P.w.sel=null;P.w.n=1;P.w.q=''}
+  else if(a==='cvall'){if(S.chk.d!==ld())S.chk={d:ld(),ids:[]};const ls=S.lotti.filter(l=>l.rem>0);ls.forEach(l=>{if(!S.chk.ids.includes(l.id))S.chk.ids.push(l.id)});lg('check-in','Check-in completo: '+ls.length+' prodotti verificati')}
+  else if(a==='rep'){riepilogo();return}
+  else if(a==='sheet'){sheet();return}
   else if(a==='zoom'){const o=document.getElementById('ov');o.style.display='flex';o.innerHTML='<button class="sm" data-a="close">✕ Chiudi</button>';const im=new Image();im.src=b.src;o.appendChild(im);return}
   else if(a==='fdel'){if(confirm('Eliminare questa fattura?')){const f=S.fatture.find(x=>x.id===id);S.fatture=S.fatture.filter(x=>x.id!==id);lg('fattura','Eliminata fattura '+f.sup+' n. '+f.num+' ('+eur(f.amt)+')')}}
   else if(a==='ics'){const l=id==='all'?S.fatture.filter(f=>f.amt-paid(f)>.01):[S.fatture.find(x=>x.id===id)];dl('scadenze-chef-control.ics',icsOf(l),'text/calendar');return}
@@ -725,7 +858,7 @@ document.addEventListener('click',async e=>{
   else if(a==='idel')S.inc=S.inc.filter(r=>r.id!==id);
   else if(a==='cv'){if(S.chk.d!==ld())S.chk={d:ld(),ids:[]};const i=S.chk.ids.indexOf(id);if(i<0){S.chk.ids.push(id);const l=S.lotti.find(x=>x.id===id);lg('check-in','Verificato '+(l?l.name+' · lotto '+l.lot:''),id)}else S.chk.ids.splice(i,1)}
   else if(a==='cdel'){e.preventDefault();if(S.cats.length<2||S.lotti.some(l=>l.rem>0&&catOf(l)===id)){toast('Categoria con prodotti o ultima rimasta: non si può togliere');return}S.cats=S.cats.filter(x=>x!==id)}
-  else if(a==='bk'){const u=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'})),el=document.createElement('a');el.href=u;el.download='chef-control-backup-'+ld()+'.json';el.click();return}
+  else if(a==='bk'){const u=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'})),el=document.createElement('a');el.href=u;el.download='chef-control-backup-'+ld()+'.json';S.bk=ld();save();el.click();return}
   else if(a==='fall'){SUG.forEach(x=>addSpesa(x.n,x.buy,x.u));toast(SUG.length+' articoli aggiunti alla lista spesa ✓')}
   else if(a==='ord'){const t='Buongiorno, vorrei ordinare:\n'+SUG.filter(x=>x.sup===id).map(x=>`- ${x.n}: ${x.buy} ${x.u}`).join('\n')+'\nGrazie';try{await navigator.clipboard.writeText(t);toast('Ordine copiato ✓')}catch(x){toast('Copia non disponibile')}return}
   else if(a==='pay'||a==='full'){const f=S.fatture.find(x=>x.id===id),r=f.amt-paid(f);const q=a==='full'?r:Math.min(r,parseFloat(document.getElementById('p'+id).value));if(!(q>0))return;f.pays.push({amt:+q.toFixed(2),date:today(),kind:'pagamento'})}
@@ -761,7 +894,8 @@ document.addEventListener('submit',async e=>{
   const f=e.target,k=f.dataset.f,v=Object.fromEntries(new FormData(f));
   if(k==='manual'){gotCode((v.c||'').trim());return}
   if(['lotto','prod','temp','spr','etich','fatt'].includes(k)&&needWho())return;
-  if(k==='who'){S.who=(v.w||'').trim();lg('accesso','Operatore: '+S.who);closeMd()}
+  if(k==='who'){const w=(v.w||'').trim();if(w){if(!S.staff.includes(w))S.staff.push(w);S.who=w;lg('accesso','Operatore: '+w);closeMd();afterWho()}}
+  if(k==='staff'){const w=(v.n||'').trim();if(w&&!S.staff.includes(w))S.staff.push(w)}
   if(k==='temp'){const u=S.units.find(x=>x.id===v.u),t=parseFloat(v.t);if(!u||isNaN(t))return;const ok=tOk(u,t),act=(v.a||'').trim();if(!ok&&!act){toast('Temperatura fuori soglia: scrivi l’azione correttiva');return}S.temps.push({id:uid(),u:u.id,t,at:new Date().toISOString(),by:S.who,ok,act});lg('temperatura',u.n+': '+t+'°C'+(ok?'':' FUORI SOGLIA · '+act));toast(ok?'Temperatura registrata ✓':'⚠️ Registrata fuori soglia')}
   if(k==='unit'){S.units.push({id:uid(),n:v.n.trim(),max:parseFloat(v.max),min:v.min===''||v.min==null?null:parseFloat(v.min)})}
   if(k==='ctask'){S.ctasks.push({id:uid(),n:v.n.trim()})}
@@ -833,6 +967,7 @@ document.addEventListener('submit',async e=>{
 });
 window.addEventListener('storage',e=>{if(e.key===K){try{S=JSON.parse(e.newValue);render()}catch(x){}}});
 render();
+if(!S.tour)setTimeout(()=>{P.tr=0;modal(tourModal(0))},700);
 </script>
 </body>
 </html>
